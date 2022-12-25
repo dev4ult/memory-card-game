@@ -1,0 +1,20 @@
+{
+  "homepage": ".",
+  "name": "memory-card-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --watch",
+    "minify": "npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^2.46.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
