@@ -11,21 +11,26 @@ void setup() {
   smooth();
 }
 
-void clickToRenderPage(String thePage, float xPos, float yPos, 
+void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yPos, 
                    float objWidth, float objHeight) {
   if((mouseX <= xPos + objWidth && mouseX >= xPos -  objWidth) && 
      (mouseY <= yPos + objHeight && mouseY >= yPos - objHeight)) {
       page = thePage;
+      if (changeTheme) {
+        renderTheme(); 
+      }
   }                
 }
 
 void mouseClicked() {
   if (page == "MainMenu") {
-    clickToRenderPage("SettingsPage", xCenter, 
+    clickToRenderPage("SettingsPage", false, xCenter, 
                        350, textWidth("Settings") / 2, 20);    
   } else if (page == "SettingsPage") {
-    clickToRenderPage("MainMenu", xCenter, 
-                       285, textWidth("go back") / 2, 15);
+    clickToRenderPage("SettingsPage", true, xCenter, 
+                       285, textWidth("Theme:" + theme) / 2, 15);
+    clickToRenderPage("MainMenu", false, xCenter, 
+                       345, textWidth("<<") / 2, 15);    
   }
 }
 
