@@ -21,14 +21,6 @@ void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yP
   }                
 }
 
-void clickToRenderObject(float xPos, float yPos, 
-                      float objHalfWidth, float objHalfHeight) {
-  if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
-     (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
-      
-  }  
-}
-
 void mouseClicked() {
   mainMenuMouseClicked();
   settingsPageMouseClicked();

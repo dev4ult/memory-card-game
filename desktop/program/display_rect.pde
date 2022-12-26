@@ -1,4 +1,4 @@
-void displayRect(float xPos, float yPos, 
+void displayRect(float xPos, float yPos,
                  float widthSize, float heightSize, 
                  int colorFill, int colorStroke) {
   noFill();
