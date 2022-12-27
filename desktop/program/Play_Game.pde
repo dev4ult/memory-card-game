@@ -40,7 +40,7 @@ void setRect() {
          rotateX(radians(rectAngle[k][l])); 
       }
       
-      displayRect(0, 0, 200, 250, textColor, #ffffff);
+      displayRect(0, 0, 200, 250, bgCard, #ffffff);
       popMatrix();
       l++;
     }
@@ -72,7 +72,7 @@ void playGameMouseClicked() {
     for(int i = 300; i <= 590; i = i + 290) {
       l = 0;
       for(int j = 140; j <= 860; j = j + 240) {
-        clickToRotateRect(k, l, j, i, 100, 150);
+        clickToRotateRect(k, l, j, i, 100, 125);
         l++;
       }
       k++;
@@ -91,9 +91,7 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
      (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
        
-      if (rotateStatus[rowIndex][columnIndex]) {
-        rotateStatus[rowIndex][columnIndex] = false;
-      } else {
+      if (!rotateStatus[rowIndex][columnIndex]) {
         rotateStatus[rowIndex][columnIndex] = true;
       }
   } 
