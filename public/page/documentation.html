@@ -9,12 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/scrolbar.css" />
   </head>
   <body class="font-spacemono">
     <div class="container max-w-6xl mx-auto px-3 py-3">
       <div class="flex justify-between mt-8">
         <div class="flex gap-5 items-center">
           <h1 class="text-3xl font-bold">MATCHUS</h1>
+          <a href="#desktop-version" class="btn btn-sm btn-accent">download for desktop</a>
+        </div>
+        <div class="flex gap-5 items-center">
+          <div class="dropdown dropdown-bottom dropdown-end">
+            <label tabindex="0" class="btn btn-sm btn-ghost m-1">Language</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><button type="button" id="select-id">Indonesia</button></li>
+              <li><button type="button" id="select-en">English</button></li>
+            </ul>
+          </div>
           <label class="swap swap-rotate">
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" id="swap-theme" />
@@ -34,16 +45,6 @@
             </svg>
           </label>
         </div>
-        <div class="flex gap-5 items-center">
-          <div class="dropdown dropdown-bottom dropdown-end">
-            <label tabindex="0" class="btn btn-sm btn-ghost m-1">Language</label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><button type="button" id="select-id">Indonesia</button></li>
-              <li><button type="button" id="select-en">English</button></li>
-            </ul>
-          </div>
-          <a href="#desktop-version" class="btn btn-sm btn-accent">download for desktop</a>
-        </div>
       </div>
       <nav class="flex justify-between">
         <div class="text-xl breadcrumbs">
@@ -60,8 +61,8 @@
       </nav>
       <main class="mt-5">
         <!-- overview -->
-        <h1 class="text-3xl mb-3 font-semibold">Overview</h1>
-        <div class="mb-5 ml-3">
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Overview</h1>
+        <div class="mb-7 ml-3">
           <p class="desc text-lg max-w-4xl">The Library we use to make this game is P5.JS for website and Processing for dekstop as the platform.</p>
           <h3 class="text-xl font-semibold mt-3">Reference :</h3>
           <ul>
@@ -69,23 +70,33 @@
             <li><a href="https://p5js.org/" class="link link-info" target="_blank">P5.JS</a></li>
           </ul>
         </div>
-
         <!-- download the desktop version -->
-        <h1 class="text-3xl mb-3 font-semibold" id="desktop-version">Desktop Version</h1>
-        <div class="mb-5 ml-3">
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8" id="desktop-version">Desktop Version</h1>
+        <div class="mb-7 ml-3">
           <p class="desc text-lg">If you want to run the game in the desktop (windows), you can download the game below</p>
-          <a href="#" class="btn btn-sm btn-accent mt-3" download>download</a>
+          <label for="no-download" class="btn btn-sm btn-accent mt-3">download</label>
+        </div>
+
+        <input type="checkbox" id="no-download" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-2xl">No Download Available!</h3>
+            <p class="py-4 text-lg">We are very sorry, the game is still in production</p>
+            <div class="modal-action">
+              <label for="no-download" class="btn btn-sm btn-accent">close</label>
+            </div>
+          </div>
         </div>
 
         <!-- project source -->
-        <h1 class="text-3xl mb-3 font-semibold">Project Source</h1>
-        <div class="mb-5 ml-3">
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Project Source</h1>
+        <div class="mb-7 ml-3">
           <p class="desc text-lg">This game is open sourced in our <a href="https://github.com/dev4ult/memory-card-game" class="link link-info" target="_blank">github repo</a></p>
         </div>
 
         <!-- program documentation -->
-        <h1 class="text-3xl mb-3 font-semibold">Program Documentation</h1>
-        <div class="mb-5 ml-3">
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Program Documentation</h1>
+        <div class="mb-7 ml-3">
           <p class="desc text-lg">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, provident quos magnam fugiat possimus sint, est modi id voluptatem explicabo culpa numquam nulla. Nulla laboriosam natus ut voluptas delectus quis ducimus corporis,
             maiores assumenda officia?
