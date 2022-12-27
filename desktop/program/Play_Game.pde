@@ -20,9 +20,12 @@ boolean[][] cardFaceUp = {
   {false, false, false, false}
 };
 
-int[][] colorCard = {{#86C8BC, #FFDB89, #A8D1D1, #E98EAD}, 
-                     {#86C8BC, #FFDB89, #A8D1D1, #E98EAD}
+int[][] colorCard = {{#86C8BC, #FFDB89, #82AAE3, #E98EAD}, 
+                     {#86C8BC, #FFDB89, #82AAE3, #E98EAD}
 };
+
+int cardUp = -1;
+int[] checkCard = new int[2];
 
 void playGame() {
   background(bgColor);
@@ -51,7 +54,6 @@ void setRect() {
 
       displayRect(0, 0, 200, 250, bgCard[k][l], #ffffff);
 
-      
       popMatrix();
       rotateRect(k, l);
       l++;
@@ -67,12 +69,6 @@ void rotateRect(int rowIndex, int columnIndex) {
       rotateStatus[rowIndex][columnIndex] = false;
       rectAngle[rowIndex][columnIndex] = 0;
     }
-  }
-  
-  if (cardFaceUp[rowIndex][columnIndex]) {
-     bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
-  } else {
-     bgCard[rowIndex][columnIndex] = #f2f2f2;
   }
 }
 
@@ -108,13 +104,40 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
                    float objHalfWidth, float objHalfHeight) {
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
      (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
+       
       if (!rotateStatus[rowIndex][columnIndex]) {
         rotateStatus[rowIndex][columnIndex] = true;  
       }
+      
       if (!cardFaceUp[rowIndex][columnIndex]){
         cardFaceUp[rowIndex][columnIndex] = true;
+        cardUp++;
+        println(cardUp);
+        bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
+        checkCard[cardUp] = colorCard[rowIndex][columnIndex];
+        if (cardUp == 1){
+          if (hex(checkCard[0]).equals(hex(checkCard[1]))){
+            println(hex(checkCard[0]));
+            println(hex(checkCard[1]));
+            println("sama");
+            cardUp = -1;
+          } else {
+            println(hex(checkCard[0]));
+            println(hex(checkCard[1]));
+            println("tidak sama");
+            cardUp = -1;
+          }
+        }
       } else {
+        bgCard[rowIndex][columnIndex] = #f2f2f2;
         cardFaceUp[rowIndex][columnIndex] = false;
       }
   } 
 }
+
+  //if (cardFaceUp[rowIndex][columnIndex]) {
+  //   bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
+  //} else {
+  //   bgCard[rowIndex][columnIndex] = #f2f2f2;
+  //}
+  
