@@ -9,12 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/scrolbar.css" />
   </head>
   <body class="font-spacemono">
     <div class="container max-w-6xl mx-auto px-3 py-3">
       <div class="flex justify-between mt-8">
         <div class="flex gap-5 items-center">
           <h1 class="text-3xl font-bold">MATCHUS</h1>
+          <a href="documentation.html#desktop-version" class="btn btn-sm btn-accent">download for desktop</a>
+        </div>
+        <div class="flex gap-5 items-center">
+          <div class="dropdown dropdown-bottom dropdown-end">
+            <label tabindex="0" class="btn btn-sm btn-ghost m-1">Language</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><button type="button" id="select-id">Indonesia</button></li>
+              <li><button type="button" id="select-en">English</button></li>
+            </ul>
+          </div>
           <label class="swap swap-rotate">
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" id="swap-theme" />
@@ -33,16 +44,6 @@
               />
             </svg>
           </label>
-        </div>
-        <div class="flex gap-5 items-center">
-          <div class="dropdown dropdown-bottom dropdown-end">
-            <label tabindex="0" class="btn btn-sm btn-ghost m-1">Language</label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><button type="button" id="select-id">Indonesia</button></li>
-              <li><button type="button" id="select-en">English</button></li>
-            </ul>
-          </div>
-          <a href="documentation.html#desktop-version" class="btn btn-sm btn-accent">download for desktop</a>
         </div>
       </div>
       <nav class="flex justify-between">
