@@ -2,7 +2,6 @@ String theme = "dark";
 
 int bgColor = #0d0401;
 int textColor = #f2f2f2;
-int bgCard = #f2f2f2;
 int primaryHoverColor = #87f49a;
 int secondaryHoverColor = #fcba03;
 

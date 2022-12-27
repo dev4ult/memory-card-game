@@ -10,20 +10,29 @@ float[][] rectAngle = {
     {0, 0, 0, 0}
 };
 
+int[][] bgCard = {
+  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
+  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
+};
+
+boolean[][] cardFaceUp = {
+  {false, false, false, false},
+  {false, false, false, false}
+};
+
+int[][] colorCard = {{#86C8BC, #FFDB89, #A8D1D1, #E98EAD}, 
+                     {#86C8BC, #FFDB89, #A8D1D1, #E98EAD}
+};
+
 void playGame() {
   background(bgColor);
   displayText("Choose and Match the card", 25, 0, textColor, textColor, xCenter, 75);
   displayText("menu", 25, 5, textColor, secondaryHoverColor, 75, 765);
   
   rectMode(CENTER);
-  setRect();
   displayTime();
-  
-  for(int i = 0; i < 2; i++) {
-    for(int j = 0; j < 4; j++) {
-      rotateRect(i, j); 
-    }
-  }
+ 
+  setRect();
 }
 
 void setRect() {
@@ -39,9 +48,12 @@ void setRect() {
       } else {
          rotateX(radians(rectAngle[k][l])); 
       }
+
+      displayRect(0, 0, 200, 250, bgCard[k][l], #ffffff);
+
       
-      displayRect(0, 0, 200, 250, bgCard, #ffffff);
       popMatrix();
+      rotateRect(k, l);
       l++;
     }
     k++;
@@ -55,6 +67,12 @@ void rotateRect(int rowIndex, int columnIndex) {
       rotateStatus[rowIndex][columnIndex] = false;
       rectAngle[rowIndex][columnIndex] = 0;
     }
+  }
+  
+  if (cardFaceUp[rowIndex][columnIndex]) {
+     bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
+  } else {
+     bgCard[rowIndex][columnIndex] = #f2f2f2;
   }
 }
 
@@ -90,9 +108,13 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
                    float objHalfWidth, float objHalfHeight) {
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
      (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
-       
       if (!rotateStatus[rowIndex][columnIndex]) {
-        rotateStatus[rowIndex][columnIndex] = true;
+        rotateStatus[rowIndex][columnIndex] = true;  
+      }
+      if (!cardFaceUp[rowIndex][columnIndex]){
+        cardFaceUp[rowIndex][columnIndex] = true;
+      } else {
+        cardFaceUp[rowIndex][columnIndex] = false;
       }
   } 
 }
