@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/scrolbar.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"
+      integrity="sha512-3WFaXQUsbGieECwv3t3DvyAkZ7pp+/rIKOQnx7NKhfwIF0u2l+DYsE2eF635ewJVj3YTU4/Ug6UqEkSTZCiSew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body class="font-spacemono">
     <div class="container max-w-6xl mx-auto px-3 py-3">
@@ -61,7 +67,7 @@
       </nav>
       <main class="mt-5">
         <h1 class="text-4xl mb-5">Match The Card</h1>
-        <div class="border-4 border-black w-full h-[80vh]"></div>
+        <div class="w-full h-[85vh]" id="sketch-container"></div>
       </main>
       <footer class="footer items-center p-4 mt-10">
         <div class="items-center grid-flow-col">
@@ -89,5 +95,8 @@
       </footer>
     </div>
     <script src="../js/main.js"></script>
+
+    <script src="../js/p5program/mainMenu.js"></script>
+    <script src="../js/sketch.js"></script>
   </body>
 </html>
