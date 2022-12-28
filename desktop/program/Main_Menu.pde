@@ -22,6 +22,7 @@ void clickToExitGame() {
 }
 
 void mainMenuMouseClicked() {
+  
   if(page == "MainMenu") {
     clickToRenderPage("PlayGame", false, xCenter, 
                        320, textWidth("Play Game") / 2, 20);    
