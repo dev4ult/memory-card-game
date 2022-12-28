@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         spacemono: ['Space Mono', 'monospace'],
+        pixel: ['Press Start 2P', 'cursive'],
       },
     },
   },

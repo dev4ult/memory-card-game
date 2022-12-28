@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="lofi">
+<html lang="en" data-theme="lofi" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/scrolbar.css" />
   </head>
   <body class="font-spacemono">
-    <div class="container max-w-6xl mx-auto px-3 py-3">
+    <div id="top" class="container max-w-6xl mx-auto px-3 py-3 relative z-10">
       <div class="flex justify-between mt-8">
         <div class="flex gap-5 items-center">
           <h1 class="text-3xl font-bold">MATCHUS</h1>
@@ -101,13 +101,38 @@
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, provident quos magnam fugiat possimus sint, est modi id voluptatem explicabo culpa numquam nulla. Nulla laboriosam natus ut voluptas delectus quis ducimus corporis,
             maiores assumenda officia?
           </p>
-          <div class="mockup-code mt-3">
-            <pre data-prefix="$"><code>npm i daisyui</code></pre>
+          <p class="text-right text-md mt-5" id="note">change documentation</p>
+          <div class="flex my-2 w-fit ml-auto">
+            <button id="processing-btn" type="button" class="btn rounded-none btn-accent">processing</button>
+            <button id="p5js-btn" type="button" class="btn btn-outline rounded-none btn-accent">p5 js</button>
           </div>
-          <div class="mockup-code mt-3">
-            <pre data-prefix="1"><code>npm i daisyui</code></pre>
-            <pre data-prefix="2"><code>installing...</code></pre>
-            <pre data-prefix="3" class="bg-warning text-warning-content"><code>Error!</code></pre>
+          <div id="p5-program" class="hidden mt-3">
+            <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
+
+            <p class="text-lg">The setup we make using p5js :</p>
+            <div class="mockup-code my-3">
+              <pre data-prefix="1"><code>function setup() {</code></pre>
+              <pre data-prefix="2"><code>   getSize();</code></pre>
+              <pre data-prefix="3"><code>   darkTheme();</code></pre>
+              <pre data-prefix="4"><code>   const canvas = createCanvas(width, height, WEBGL);</code></pre>
+              <pre data-prefix="5"><code>   canvas.parent(sketchContainer);</code></pre>
+              <pre data-prefix="6"><code>}</code></pre>
+            </div>
+            <p class="text-md italic">Note: to create a procedure, javascript use the function keyword even though it is not a function because javascript don't have the void keyword</p>
+          </div>
+          <div id="processing-program" class="mt-3">
+            <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
+            <p class="text-lg">The setup we make using processing :</p>
+            <div class="mockup-code mt-3">
+              <pre data-prefix="1"><code>void setup() {</code></pre>
+              <pre data-prefix="2"><code>   size(1000, 800, P3D);</code></pre>
+              <pre data-prefix="3"><code>   xCenter = width / 2;</code></pre>
+              <pre data-prefix="4"><code>   pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);</code></pre>
+              <pre data-prefix="5"><code>   textFont(pixelFont);</code></pre>
+              <pre data-prefix="6"><code>   smooth();</code></pre>
+              <pre data-prefix="7"><code>   shuffleColor(colorCard);</code></pre>
+              <pre data-prefix="8"><code>}</code></pre>
+            </div>
           </div>
         </div>
       </main>
@@ -136,6 +161,15 @@
         </div>
       </footer>
     </div>
+    <a id="back-to-top" href="#top" class="btn btn-circle btn-accent fixed right-24 bottom-12 z-10 hidden">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+        <path
+          d="M277.333 447.995V115.493L390.251 228.411C392.224 230.428 394.577 232.034 397.175 233.135C399.773 234.237 402.563 234.812 405.385 234.827C408.206 234.843 411.003 234.298 413.613 233.226C416.222 232.153 418.593 230.573 420.588 228.578C422.583 226.582 424.163 224.211 425.235 221.601C426.307 218.991 426.851 216.195 426.835 213.373C426.819 210.551 426.243 207.761 425.142 205.163C424.04 202.566 422.434 200.213 420.416 198.24L271.083 48.9068C267.082 44.9074 261.657 42.6606 256 42.6606C250.343 42.6606 244.918 44.9074 240.917 48.9068L91.5839 198.24C89.5991 200.219 88.0251 202.571 86.9523 205.16C85.8796 207.749 85.3294 210.525 85.3333 213.328C85.3342 217.547 86.5858 221.67 88.93 225.178C91.2742 228.685 94.6057 231.419 98.5033 233.033C102.401 234.648 106.69 235.07 110.827 234.247C114.965 233.424 118.766 231.393 121.749 228.411L234.667 115.493V447.995C234.667 453.653 236.914 459.079 240.915 463.08C244.916 467.081 250.342 469.328 256 469.328C261.658 469.328 267.084 467.081 271.085 463.08C275.086 459.079 277.333 453.653 277.333 447.995Z"
+          fill="white"
+        />
+      </svg>
+    </a>
     <script src="../js/main.js"></script>
+    <script src="../js/doc.js"></script>
   </body>
 </html>

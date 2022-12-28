@@ -1,9 +1,9 @@
-
 void mainMenu() {
   background(bgColor);
   xCenter = width / 2;
   
   displayText("MATCH US", 50, 0, textColor, textColor, xCenter, 230);
+  
   rectMode(CENTER);
   displayRect(xCenter, 270, textWidth("MATCH US"), 10, textColor, -1);
   
@@ -23,6 +23,7 @@ void clickToExitGame() {
 }
 
 void mainMenuMouseClicked() {
+  
   if(page == "MainMenu") {
     clickToRenderPage("PlayGame", false, xCenter, 
                        320, textWidth("Play Game") / 2, 20);    
