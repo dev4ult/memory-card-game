@@ -1,7 +1,7 @@
 void displayRect(float xPos, float yPos,
                  float widthSize, float heightSize, 
                  int colorFill, int colorStroke) {
-  noFill();
+  //noFill();
   noStroke(); 
 
   if (colorFill != -1) {
