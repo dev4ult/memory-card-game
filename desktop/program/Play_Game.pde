@@ -10,10 +10,6 @@ float[][] rectAngle = {
           {0, 0, 0, 0}
 };
 
-
-
-
-
 int[][] colorCard = {
         {#FFDB89, #FFDB89, #82AAE3, #E98EAD}, 
         {#86C8BC, #82AAE3, #86C8BC, #E98EAD}
@@ -107,7 +103,7 @@ void rotateRect(int rowIndex, int columnIndex) {
 
   if(!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]){
       bgCard[rowIndex][columnIndex] = #f2f2f2; 
-rigin/agus
+
   }
 }
 
@@ -145,11 +141,6 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
         
     
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/agus
       (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
      
      if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
@@ -217,10 +208,6 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
        }
         
    } 
-<<<<<<< HEAD
-} 
-=======
-   
+
    
 }
->>>>>>> origin/agus
