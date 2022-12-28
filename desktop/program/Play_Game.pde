@@ -11,8 +11,8 @@ float[][] rectAngle = {
 };
 
 int[][] bgCard = {
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
+        {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
+        {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
 };
 
 boolean[][] cardFaceUp = {
@@ -20,8 +20,9 @@ boolean[][] cardFaceUp = {
             {false, false, false, false}
 };
 
-int[][] colorCard = {{#86C8BC, #FFDB89, #82AAE3, #E98EAD}, 
-                     {#86C8BC, #FFDB89, #82AAE3, #E98EAD}
+int[][] colorCard = {
+        {#86C8BC, #FFDB89, #82AAE3, #E98EAD}, 
+        {#86C8BC, #FFDB89, #82AAE3, #E98EAD}
 };
 
 int cardUp = -1;
@@ -144,7 +145,7 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
                for(int i = 0; i < 2; i++){
                    rotateStatus[rowCard[i]][columnCard[i]] = true;
                    cardFaceUp[rowCard[i]][columnCard[i]] = false;
-                   isAbleToRotate[rowCard[i]][columnCard[i]] = false;
+                   isAbleToRotate[rowCard[i]][columnCard[i]] = true;
                }
                cardUp = -1;          
                println("Beda");   
