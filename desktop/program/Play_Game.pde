@@ -21,8 +21,8 @@ boolean[][] cardFaceUp = {
 };
 
 int[][] colorCard = {
-        {#86C8BC, #FFDB89, #82AAE3, #E98EAD}, 
-        {#86C8BC, #FFDB89, #82AAE3, #E98EAD}
+        {#FFDB89, #FFDB89, #82AAE3, #E98EAD}, 
+        {#86C8BC, #82AAE3, #86C8BC, #E98EAD}
 };
 
 int cardUp = -1;
@@ -44,6 +44,20 @@ void playGame() {
   displayTime();
    
   setRect();
+}
+
+void shuffleColor(int[][] array){
+    int Cols = array.length;
+    int Rows = array[0].length;
+    for(int col = 0; col < Cols; col++){
+      for(int row = 0; row < Rows; row++){
+        int randC = int(random(Cols));
+        int randR = int(random(Rows));
+        int temp = array[col][row];
+        array[col][row] = array[randC][randR];
+        array[randC][randR] = temp;
+      }
+    }
 }
 
 void setRect() {
