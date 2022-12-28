@@ -78,7 +78,7 @@ void rotateRect(int rowIndex, int columnIndex) {
   }
   
   if(!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]){
-    bgCard[rowIndex][columnIndex] = #f2f2f2; 
+      bgCard[rowIndex][columnIndex] = #f2f2f2; 
   }
 }
 
@@ -117,6 +117,7 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
      
      if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
           rotateStatus[rowIndex][columnIndex] = true;
+          isAbleToRotate[rowIndex][columnIndex] = false;
      }
       
       if (!cardFaceUp[rowIndex][columnIndex]){
@@ -132,23 +133,24 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
         if (cardUp == 1){       
            if (hex(checkCard[0]).equals(hex(checkCard[1]))){
              
-             for(int i = 0; i < 2; i++){
-                isAbleToRotate[rowCard[i]][columnCard[i]] = false;
-             }
-             cardUp = -1;
-             println("Sama");
+               for(int i = 0; i < 2; i++){
+                  isAbleToRotate[rowCard[i]][columnCard[i]] = false;
+               }
+               cardUp = -1;
+               println("Sama");
              
            } else {  
-             for(int i = 0; i < 2; i++){
-                 rotateStatus[rowCard[i]][columnCard[i]] = true;
-                 cardFaceUp[rowCard[i]][columnCard[i]] = false;
-             }
-             cardUp = -1;          
-             println("Beda");
              
+               for(int i = 0; i < 2; i++){
+                   rotateStatus[rowCard[i]][columnCard[i]] = true;
+                   cardFaceUp[rowCard[i]][columnCard[i]] = false;
+                   isAbleToRotate[rowCard[i]][columnCard[i]] = false;
+               }
+               cardUp = -1;          
+               println("Beda");   
            }
         }      
-      } else {      
+      } else {     
         cardFaceUp[rowIndex][columnIndex] = false;
      }
    } 
