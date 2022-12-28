@@ -26,6 +26,7 @@ void mouseClicked() {
   mainMenuMouseClicked();
   settingsPageMouseClicked();
   playGameMouseClicked();
+  winpagemouseclick();
 }
 
 void setCamera() {
@@ -38,14 +39,25 @@ void resetCamera() {
 }
 
 void draw() {
-  if(page == "MainMenu") {
-    setCamera();
-    mainMenu(); 
-  } else if(page == "SettingsPage") {
-    setCamera();
-    settingsPage(); 
-  } else if(page == "PlayGame") {
-    resetCamera();
+  
+  switch(page) {
+  case "MainMenu":
+      setCamera();
+      mainMenu(); 
+    break;
+  case "SettingsPage":
+      setCamera();
+      settingsPage(); 
+    break;
+  case "PlayGame":
+     resetCamera();
     playGame();
-  }
+  break;
+   case "WinPage":
+    winPage();
+  break;
+  
+  default:
+ println("page does not exits"); 
+}
 }

@@ -10,15 +10,9 @@ float[][] rectAngle = {
           {0, 0, 0, 0}
 };
 
-int[][] bgCard = {
-        {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
-        {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
-};
 
-boolean[][] cardFaceUp = {
-            {false, false, false, false},
-            {false, false, false, false}
-};
+
+
 
 int[][] colorCard = {
         {#FFDB89, #FFDB89, #82AAE3, #E98EAD}, 
@@ -34,6 +28,18 @@ boolean[][] isAbleToRotate = {
             {true, true, true, true},
             {true, true, true, true}
 };
+
+
+int[][] bgCard = {
+          {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
+          {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
+};
+
+boolean[][] cardFaceUp = {
+        {false, false, false, false},
+        {false, false, false, false}
+};
+
 
 
 void playGame() {
@@ -60,6 +66,8 @@ void shuffleColor(int[][] array){
         array[randC][randR] = temp;
       }
     }
+
+
 }
 
 void setRect() {
@@ -77,6 +85,7 @@ void setRect() {
       }
 
       displayRect(0, 0, 200, 250, bgCard[k][l], #ffffff);
+
 
       popMatrix();
       rotateRect(k, l);
@@ -98,6 +107,7 @@ void rotateRect(int rowIndex, int columnIndex) {
 
   if(!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]){
       bgCard[rowIndex][columnIndex] = #f2f2f2; 
+rigin/agus
   }
 }
 
@@ -129,10 +139,17 @@ void playGameMouseClicked() {
   } 
 }
 
+int win = 0;
 void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos, 
                        float objHalfWidth, float objHalfHeight) {
+        
+    
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/agus
       (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
      
      if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
@@ -150,28 +167,60 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
         rowCard[cardUp] = rowIndex;
         columnCard[cardUp] = columnIndex;
         
-        if (cardUp == 1){       
+        if (cardUp == 1)
+        {       
            if (hex(checkCard[0]).equals(hex(checkCard[1]))){
-             
+           
              for(int i = 0; i < 2; i++){
                 isAbleToRotate[rowCard[i]][columnCard[i]] = false;
              }
              cardUp = -1;
-             println("Sama");
+             
+             
+          
+             win++;
              
            } else {  
              
-             for(int i = 0; i < 2; i++){
+             for(int i = 0; i < 2; i++)
+               {
                 rotateStatus[rowCard[i]][columnCard[i]] = true;
                 cardFaceUp[rowCard[i]][columnCard[i]] = false;
                 isAbleToRotate[rowCard[i]][columnCard[i]] = true;
-             }
-             cardUp = -1;          
-             println("Beda");   
-           }
-        }      
-      } else {     
+               }
+               
+               cardUp = -1;          
+                          
+                 }
+           
+           
+         } 
+                          
+           } else {     
         cardFaceUp[rowIndex][columnIndex] = false;
-     }
+           }
+       if (win == 4 ){
+         
+           for ( int i = 0; i < 2; i++){
+                 for (int j = 0; j <4; j++){
+                   
+                rotateStatus[i][j] = false;
+                  cardFaceUp[i][j] = false;
+              isAbleToRotate[i][j] = true;              
+                  
+                 }
+             }
+             
+          page = "WinPage";
+          win =0;
+       
+       }
+        
    } 
+<<<<<<< HEAD
 } 
+=======
+   
+   
+}
+>>>>>>> origin/agus
