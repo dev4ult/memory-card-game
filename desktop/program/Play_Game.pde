@@ -1,8 +1,8 @@
 boolean rotateHorizontal = true;
 
 boolean[][] rotateStatus = {
-    {false, false, false, false}, 
-    {false, false, false, false}
+            {false, false, false, false}, 
+            {false, false, false, false}
 };
 
 float[][] rectAngle = {
@@ -16,8 +16,8 @@ int[][] bgCard = {
 };
 
 boolean[][] cardFaceUp = {
-  {false, false, false, false},
-  {false, false, false, false}
+            {false, false, false, false},
+            {false, false, false, false}
 };
 
 int[][] colorCard = {{#86C8BC, #FFDB89, #82AAE3, #E98EAD}, 
@@ -26,6 +26,12 @@ int[][] colorCard = {{#86C8BC, #FFDB89, #82AAE3, #E98EAD},
 
 int cardUp = -1;
 int[] checkCard = new int[2];
+int[] rowCard = new int[2];
+int[] columnCard = new int[2];
+boolean[][] isAbleToRotate = {
+            {true, true, true, true},
+            {true, true, true, true}
+};
 
 void playGame() {
   background(bgColor);
@@ -70,6 +76,10 @@ void rotateRect(int rowIndex, int columnIndex) {
       rectAngle[rowIndex][columnIndex] = 0;
     }
   }
+  
+  if(!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]){
+    bgCard[rowIndex][columnIndex] = #f2f2f2; 
+  }
 }
 
 void displayTime() {
@@ -104,40 +114,39 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
                    float objHalfWidth, float objHalfHeight) {
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
      (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
-       
-      if (!rotateStatus[rowIndex][columnIndex]) {
-        rotateStatus[rowIndex][columnIndex] = true;  
-      }
+     
+     if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
+        rotateStatus[rowIndex][columnIndex] = true;
+     }
       
       if (!cardFaceUp[rowIndex][columnIndex]){
+        
         cardFaceUp[rowIndex][columnIndex] = true;
-        cardUp++;
-        println(cardUp);
+        cardUp++;        
+        
         bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
-        checkCard[cardUp] = colorCard[rowIndex][columnIndex];
-        if (cardUp == 1){
-          if (hex(checkCard[0]).equals(hex(checkCard[1]))){
-            println(hex(checkCard[0]));
-            println(hex(checkCard[1]));
-            println("sama");
-            cardUp = -1;
-          } else {
-            println(hex(checkCard[0]));
-            println(hex(checkCard[1]));
-            println("tidak sama");
-            cardUp = -1;
-          }
-        }
-      } else {
-        bgCard[rowIndex][columnIndex] = #f2f2f2;
+        checkCard[cardUp] = bgCard[rowIndex][columnIndex];
+        rowCard[cardUp] = rowIndex;
+        columnCard[cardUp] = columnIndex;
+        
+        if (cardUp == 1){       
+           if (hex(checkCard[0]).equals(hex(checkCard[1]))){
+             for(int i = 0; i < 2; i++){
+                isAbleToRotate[rowCard[i]][columnCard[i]] = false;
+             }
+              cardUp = -1;
+              println("Sama");
+           } else {  
+              for(int i = 0; i < 2; i++){
+                rotateStatus[rowCard[i]][columnCard[i]] = true;
+                cardFaceUp[rowCard[i]][columnCard[i]] = false;
+              } 
+              cardUp = -1;          
+              println("Beda");
+           }
+        }      
+      } else {      
         cardFaceUp[rowIndex][columnIndex] = false;
-      }
-  } 
-}
-
-  //if (cardFaceUp[rowIndex][columnIndex]) {
-  //   bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
-  //} else {
-  //   bgCard[rowIndex][columnIndex] = #f2f2f2;
-  //}
-  
+     }
+   } 
+} 
