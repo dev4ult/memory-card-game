@@ -6,8 +6,8 @@ boolean[][] rotateStatus = {
 };
 
 float[][] rectAngle = {
-    {0, 0, 0, 0},
-    {0, 0, 0, 0}
+          {0, 0, 0, 0},
+          {0, 0, 0, 0}
 };
 
 int[][] bgCard = {
@@ -29,6 +29,7 @@ int cardUp = -1;
 int[] checkCard = new int[2];
 int[] rowCard = new int[2];
 int[] columnCard = new int[2];
+
 boolean[][] isAbleToRotate = {
             {true, true, true, true},
             {true, true, true, true}
@@ -38,10 +39,10 @@ void playGame() {
   background(bgColor);
   displayText("Choose and Match the card", 25, 0, textColor, textColor, xCenter, 75);
   displayText("menu", 25, 5, textColor, secondaryHoverColor, 75, 765);
-  
+    
   rectMode(CENTER);
   displayTime();
- 
+   
   setRect();
 }
 
@@ -134,21 +135,21 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
         if (cardUp == 1){       
            if (hex(checkCard[0]).equals(hex(checkCard[1]))){
              
-               for(int i = 0; i < 2; i++){
-                  isAbleToRotate[rowCard[i]][columnCard[i]] = false;
-               }
-               cardUp = -1;
-               println("Sama");
+             for(int i = 0; i < 2; i++){
+                isAbleToRotate[rowCard[i]][columnCard[i]] = false;
+             }
+             cardUp = -1;
+             println("Sama");
              
            } else {  
              
-               for(int i = 0; i < 2; i++){
-                   rotateStatus[rowCard[i]][columnCard[i]] = true;
-                   cardFaceUp[rowCard[i]][columnCard[i]] = false;
-                   isAbleToRotate[rowCard[i]][columnCard[i]] = true;
-               }
-               cardUp = -1;          
-               println("Beda");   
+             for(int i = 0; i < 2; i++){
+                rotateStatus[rowCard[i]][columnCard[i]] = true;
+                cardFaceUp[rowCard[i]][columnCard[i]] = false;
+                isAbleToRotate[rowCard[i]][columnCard[i]] = true;
+             }
+             cardUp = -1;          
+             println("Beda");   
            }
         }      
       } else {     
