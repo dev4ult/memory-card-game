@@ -35,18 +35,6 @@ boolean[][] isAbleToRotate = {
             {true, true, true, true}
 };
 
-// buat card
-int[][] bgCard = {
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
-};
-
-boolean[][] cardFaceUp = {
-  {false, false, false, false},
-  {false, false, false, false}
-};
-
-int[] colorCard = {#579BB1, #144272, #A8D1D1, #E98EAD, #579BB1, #144272, #A8D1D1, #E98EAD};
 
 void playGame() {
   background(bgColor);

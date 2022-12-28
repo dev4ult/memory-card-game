@@ -3,6 +3,7 @@ void mainMenu() {
   xCenter = width / 2;
   
   displayText("MATCH US", 50, 0, textColor, textColor, xCenter, 230);
+  
   rectMode(CENTER);
   displayRect(xCenter, 270, textWidth("MATCH US"), 10, textColor, -1);
   

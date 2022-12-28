@@ -17,16 +17,52 @@ function preload() {
 
 function setup() {
   getSize();
+  darkTheme();
 
   const canvas = createCanvas(width, height, WEBGL);
   canvas.parent(sketchContainer);
 }
 
-function draw() {
-  camera(mouseX - halfSketchWidth, mouseY - halfSketchHeight, height / 2 / tan(PI / 6), 0, 0, 0, 0, 1, 0);
-  textFont(pixelFont);
+let page = 'MainMenu';
 
-  mainMenu();
+function mouseClicked() {
+  switch (page) {
+    case 'MainMenu':
+      mainMenuMouseClicked();
+      break;
+    case 'Settings':
+      settingsMouseClicked();
+      break;
+    case 'PlayGame':
+      playGameMouseClicked();
+      break;
+  }
+}
+
+function setCameraToMoveByMouse() {
+  camera(mouseX - halfSketchWidth, mouseY - halfSketchHeight, height / 2 / tan(PI / 6), 0, 0, 0, 0, 1, 0);
+}
+
+function setCameraToStatic() {
+  camera();
+}
+
+function draw() {
+  textFont(pixelFont);
+  setCameraToMoveByMouse();
+
+  switch (page) {
+    case 'MainMenu':
+      mainMenu();
+      break;
+    case 'Settings':
+      settings();
+      break;
+    case 'PlayGame':
+      setCameraToStatic();
+      playGame();
+      break;
+  }
 }
 
 function windowResized() {
