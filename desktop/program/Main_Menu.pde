@@ -1,4 +1,3 @@
-
 void mainMenu() {
   background(bgColor);
   xCenter = width / 2;

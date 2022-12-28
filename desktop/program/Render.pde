@@ -8,6 +8,7 @@ void setup() {
   pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);
   textFont(pixelFont);
   smooth();
+  shuffleColor(colorCard);
 }
 
 void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yPos, 
