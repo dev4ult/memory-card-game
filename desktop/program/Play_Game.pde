@@ -35,7 +35,6 @@ boolean[][] cardFaceUp = {
         {false, false, false, false}
 };
 
-
 void playGame() {
   background(bgColor);
   displayText("Choose and Match the card", 25, 0, textColor, textColor, xCenter, 75);
@@ -92,10 +91,9 @@ void rotateRect(int rowIndex, int columnIndex) {
       rectAngle[rowIndex][columnIndex] = 0;
     }
   }
-  
-
+ 
   if(!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]){
-      bgCard[rowIndex][columnIndex] = #f2f2f2; 
+     bgCard[rowIndex][columnIndex] = #f2f2f2; 
   }
 }
 
@@ -128,38 +126,36 @@ void playGameMouseClicked() {
 }
 
 int win = 0;
+
 void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos, 
                        float objHalfWidth, float objHalfHeight) {
           
    if((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) && 
-
-
       (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
-     
+        
      if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
           rotateStatus[rowIndex][columnIndex] = true;
           isAbleToRotate[rowIndex][columnIndex] = false;
      }
       
       if (!cardFaceUp[rowIndex][columnIndex]){
-        
+      
         cardFaceUp[rowIndex][columnIndex] = true;
         cardUp++;    
-        
+
         bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
         checkCard[cardUp] = bgCard[rowIndex][columnIndex];
         rowCard[cardUp] = rowIndex;
         columnCard[cardUp] = columnIndex;
         
-        if (cardUp == 1)
-        {       
+        if (cardUp == 1){       
            if (hex(checkCard[0]).equals(hex(checkCard[1]))){
-           
              for(int i = 0; i < 2; i++){
                 isAbleToRotate[rowCard[i]][columnCard[i]] = false;
              }
              cardUp = -1;
              win++;
+             println("sama");
            } else {  
              
              for(int i = 0; i < 2; i++)
@@ -168,30 +164,23 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
                 cardFaceUp[rowCard[i]][columnCard[i]] = false;
                 isAbleToRotate[rowCard[i]][columnCard[i]] = true;
                }
-               
-               cardUp = -1;          
-                          
-                 } 
+               cardUp = -1;                
+           } 
          }                    
-           } else {     
+       } else {     
         cardFaceUp[rowIndex][columnIndex] = false;
-           }
-       if (win == 4 ){
-         
-           for ( int i = 0; i < 2; i++){
-                 for (int j = 0; j <4; j++){
-                   
-                rotateStatus[i][j] = false;
-                  cardFaceUp[i][j] = false;
-              isAbleToRotate[i][j] = true;              
-                  
-                 }
-             }
-             
-          page = "WinPage";
-          win =0;
-       
        }
-        
+       if (win == 4 ){
+          for ( int i = 0; i < 2; i++){
+              for (int j = 0; j <4; j++){       
+                rotateStatus[i][j] = false;
+                cardFaceUp[i][j] = false;
+                isAbleToRotate[i][j] = true;                                
+              }
+          }            
+          page = "WinPage";
+          win = 0;
+          shuffleColor(colorCard);
+       }      
    } 
 }

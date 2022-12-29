@@ -26,7 +26,7 @@ void mouseClicked() {
   mainMenuMouseClicked();
   settingsPageMouseClicked();
   playGameMouseClicked();
-  winpagemouseclick();
+  winPageMouseClicked();
 }
 
 void setCamera() {
