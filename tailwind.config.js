@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./public/**/*.{html,js}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        spacemono: ['Space Mono', 'monospace'],
+      },
+    },
   },
-  plugins: [require('daisyui')],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
