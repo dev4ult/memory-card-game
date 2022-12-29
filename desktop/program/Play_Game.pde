@@ -139,7 +139,7 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
       if (!cardFaceUp[rowIndex][columnIndex]){
         
         cardFaceUp[rowIndex][columnIndex] = true;
-        cardUp++;        
+        cardUp++;    
         
         bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
         checkCard[cardUp] = bgCard[rowIndex][columnIndex];
@@ -154,7 +154,6 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
              }
              cardUp = -1;
              println("Sama");
-             
            } else {  
              
              for(int i = 0; i < 2; i++){
