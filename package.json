@@ -1,0 +1,25 @@
+{
+  "homepage": "https://dev4ult.github.io/memory-card-game/public/page/",
+  "name": "memory-card-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --watch",
+    "minify": "npx tailwindcss -i ./src/css/input.css -o ./public/css/styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^2.46.0",
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "p5": "^1.5.0"
+  }
+}

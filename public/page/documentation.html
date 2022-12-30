@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lofi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATCHUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/scrolbar.css" />
+  </head>
+  <body class="font-spacemono">
+    <div id="top" class="container max-w-6xl mx-auto px-3 py-3 relative z-10">
+      <div class="flex justify-between mt-8">
+        <div class="flex gap-5 items-center">
+          <h1 class="text-3xl font-bold">MATCHUS</h1>
+          <a href="#desktop-version" class="btn btn-sm btn-accent">download for desktop</a>
+        </div>
+        <div class="flex gap-5 items-center">
+          <div class="dropdown dropdown-bottom dropdown-end">
+            <label tabindex="0" class="btn btn-sm btn-ghost m-1">Language</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><button type="button" id="select-id">Indonesia</button></li>
+              <li><button type="button" id="select-en">English</button></li>
+            </ul>
+          </div>
+          <label class="swap swap-rotate">
+            <!-- this hidden checkbox controls the state -->
+            <input type="checkbox" id="swap-theme" />
+
+            <!-- sun icon -->
+            <svg class="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+              />
+            </svg>
+
+            <!-- moon icon -->
+            <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+              />
+            </svg>
+          </label>
+        </div>
+      </div>
+      <nav class="flex justify-between">
+        <div class="text-xl breadcrumbs">
+          <ul>
+            <li><a href="index.html">Play</a></li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+        <div class="text-xl breadcrumbs">
+          <ul>
+            <li><a href="about-us.html">About us</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main class="mt-5">
+        <!-- overview -->
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Overview</h1>
+        <div class="mb-7 ml-3">
+          <p class="desc text-lg max-w-4xl">The Library we use to make this game is P5.JS for website and Processing for dekstop as the platform.</p>
+          <h3 class="text-xl font-semibold mt-3">Reference :</h3>
+          <ul>
+            <li><a href="https://processing.org/" class="link link-info" target="_blank">Processing</a></li>
+            <li><a href="https://p5js.org/" class="link link-info" target="_blank">P5.JS</a></li>
+          </ul>
+        </div>
+        <!-- download the desktop version -->
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8" id="desktop-version">Desktop Version</h1>
+        <div class="mb-7 ml-3">
+          <p class="desc text-lg">If you want to run the game in the desktop (windows), you can download the game below</p>
+          <a href="https://drive.google.com/file/d/1GAd26sC5ofKcc0XmUW-tj1c-Xuz2IZ8S/view?usp=share_link" class="btn btn-sm btn-accent mt-3" target="_blank">download link</a>
+        </div>
+
+        <input type="checkbox" id="no-download" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-2xl">No Download Available!</h3>
+            <p class="py-4 text-lg">We are very sorry, the game is still in production</p>
+            <div class="modal-action">
+              <label for="no-download" class="btn btn-sm btn-accent">close</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- project source -->
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Project Source</h1>
+        <div class="mb-7 ml-3">
+          <p class="desc text-lg">This game is open sourced in our <a href="https://github.com/dev4ult/memory-card-game" class="link link-info" target="_blank">github repo</a></p>
+        </div>
+
+        <!-- program documentation -->
+        <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8">Program Documentation</h1>
+        <div class="mb-7 ml-3">
+          <p class="desc text-lg">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, provident quos magnam fugiat possimus sint, est modi id voluptatem explicabo culpa numquam nulla. Nulla laboriosam natus ut voluptas delectus quis ducimus corporis,
+            maiores assumenda officia?
+          </p>
+          <p class="text-right text-md mt-5" id="note">change documentation</p>
+          <div class="flex my-2 w-fit ml-auto">
+            <button id="processing-btn" type="button" class="btn rounded-none btn-accent">processing</button>
+            <button id="p5js-btn" type="button" class="btn btn-outline rounded-none btn-accent">p5 js</button>
+          </div>
+          <div id="p5-program" class="hidden mt-3">
+            <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
+
+            <p class="text-lg">The setup we make using p5js :</p>
+            <div class="mockup-code my-3">
+              <pre data-prefix="1"><code>function setup() {</code></pre>
+              <pre data-prefix="2"><code>   getSize();</code></pre>
+              <pre data-prefix="3"><code>   darkTheme();</code></pre>
+              <pre data-prefix="4"><code>   const canvas = createCanvas(width, height, WEBGL);</code></pre>
+              <pre data-prefix="5"><code>   canvas.parent(sketchContainer);</code></pre>
+              <pre data-prefix="6"><code>}</code></pre>
+            </div>
+            <p class="text-md italic">Note: to create a procedure, javascript use the function keyword even though it is not a function because javascript don't have the void keyword</p>
+          </div>
+          <div id="processing-program" class="mt-3">
+            <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
+            <p class="text-lg">The setup we make using processing :</p>
+            <div class="mockup-code mt-3">
+              <pre data-prefix="1"><code>void setup() {</code></pre>
+              <pre data-prefix="2"><code>   size(1000, 800, P3D);</code></pre>
+              <pre data-prefix="3"><code>   xCenter = width / 2;</code></pre>
+              <pre data-prefix="4"><code>   pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);</code></pre>
+              <pre data-prefix="5"><code>   textFont(pixelFont);</code></pre>
+              <pre data-prefix="6"><code>   smooth();</code></pre>
+              <pre data-prefix="7"><code>   shuffleColor(colorCard);</code></pre>
+              <pre data-prefix="8"><code>}</code></pre>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer items-center p-4">
+        <div class="items-center grid-flow-col">
+          <p>Copyright © 2022 - All right reserved</p>
+        </div>
+        <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+          <a
+            ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              ></path></svg
+          ></a>
+          <a
+            ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg
+          ></a>
+        </div>
+      </footer>
+    </div>
+    <a id="back-to-top" href="#top" class="btn btn-circle btn-accent fixed right-24 bottom-12 z-10 hidden">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+        <path
+          d="M277.333 447.995V115.493L390.251 228.411C392.224 230.428 394.577 232.034 397.175 233.135C399.773 234.237 402.563 234.812 405.385 234.827C408.206 234.843 411.003 234.298 413.613 233.226C416.222 232.153 418.593 230.573 420.588 228.578C422.583 226.582 424.163 224.211 425.235 221.601C426.307 218.991 426.851 216.195 426.835 213.373C426.819 210.551 426.243 207.761 425.142 205.163C424.04 202.566 422.434 200.213 420.416 198.24L271.083 48.9068C267.082 44.9074 261.657 42.6606 256 42.6606C250.343 42.6606 244.918 44.9074 240.917 48.9068L91.5839 198.24C89.5991 200.219 88.0251 202.571 86.9523 205.16C85.8796 207.749 85.3294 210.525 85.3333 213.328C85.3342 217.547 86.5858 221.67 88.93 225.178C91.2742 228.685 94.6057 231.419 98.5033 233.033C102.401 234.648 106.69 235.07 110.827 234.247C114.965 233.424 118.766 231.393 121.749 228.411L234.667 115.493V447.995C234.667 453.653 236.914 459.079 240.915 463.08C244.916 467.081 250.342 469.328 256 469.328C261.658 469.328 267.084 467.081 271.085 463.08C275.086 459.079 277.333 453.653 277.333 447.995Z"
+          fill="white"
+        />
+      </svg>
+    </a>
+    <script src="../js/main.js"></script>
+    <script src="../js/doc.js"></script>
+  </body>
+</html>
