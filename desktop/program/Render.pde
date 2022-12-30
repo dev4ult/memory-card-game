@@ -9,14 +9,14 @@ int startTime, endTime;
 
 void setup() {
   reloadBestTime();
+  setupAllSound();
   pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);
   textFont(pixelFont);
   size(1000, 800, P3D);
   xCenter = width / 2;
   smooth();
   imageMode(CENTER);
-
-  
+  themeSound.play();
 }
 
 void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yPos,
@@ -24,6 +24,8 @@ void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yP
   if ((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) &&
     (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
     page = thePage;
+    playTickSound();
+
     if (changeTheme) {
       renderTheme();
     }
@@ -66,6 +68,7 @@ void defaultCamera() {
 }
 
 void draw() {
+
   endTime = millis();
   switch(page) {
   case "MainMenu":

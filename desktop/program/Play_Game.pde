@@ -1,47 +1,28 @@
 boolean rotateHorizontal = true;
 
-boolean[][] rotateStatus = {
-  {false, false, false, false},
-  {false, false, false, false}
-};
-
-float[][] rectAngle = {
-  {0, 0, 0, 0},
-  {0, 0, 0, 0}
-};
-
-int[][] colorCard = {
-  {#FFDB89, #FFDB89, #82AAE3, #E98EAD},
-  {#86C8BC, #82AAE3, #86C8BC, #E98EAD}
-};
+boolean[][] rotateStatus;
+float[][] rectAngle;
 
 int cardUp = -1;
-int[] checkCard = new int[2];
+PImage[] checkCard = new PImage[2];
 int[] rowCard = new int[2];
 int[] columnCard = new int[2];
 
-boolean[][] isAbleToRotate = {
-  {true, true, true, true},
-  {true, true, true, true}
-};
+boolean[][] isAbleToRotate;
+boolean[][] cardFaceUp;
 
-int[][] bgCard = {
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2},
-  {#f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2}
-};
+int[][] zPos;
 
-boolean[][] cardFaceUp = {
-  {false, false, false, false},
-  {false, false, false, false}
-};
 
 void playGame() {
   background(bgColor);
 
   waitToStartTheGame();
 
-  displayText("Choose and Match the card", 25, 0, textColor, textColor, xCenter, 75);
-  displayText("menu", 25, 5, textColor, secondaryHoverColor, 75, 765);
+  displayText("Match the card", 25, 0, textColor, textColor, xCenter, 75);
+  cursor(ARROW);
+
+  displayText("MENU", 25, 5, textColor, secondaryHoverColor, 75, 75);
 
   rectMode(CENTER);
   setRect();
@@ -51,16 +32,16 @@ void playGame() {
   getTime();
 }
 
-void shuffleColor(int[][] array) {
+void shuffleCard(PImage[][] array) {
   int Cols = array.length;
   int Rows = array[0].length;
   for (int col = 0; col < Cols; col++) {
     for (int row = 0; row < Rows; row++) {
       int randC = int(random(Cols));
       int randR = int(random(Rows));
-      int temp = array[col][row];
+      PImage imgTemp = array[col][row];
       array[col][row] = array[randC][randR];
-      array[randC][randR] = temp;
+      array[randC][randR] = imgTemp;
     }
   }
 }
@@ -68,23 +49,27 @@ void shuffleColor(int[][] array) {
 void setRect() {
 
   int k = 0, l = 0;
-  for (int i = 300; i <= 590; i = i + 290) {
+  for (float i = yPosStart; i <= yLimit; i = i + yRange) {
     l = 0;
-    for (int j = 140; j <= 860; j = j + 240) {
+    for (float j = xPosStart; j <= xLimit; j = j + xRange) {
       pushMatrix();
-      translate(j, i);
+
+      translate(j, i, zPos[k][l]);
 
       if (rotateHorizontal) {
         rotateY(radians(rectAngle[k][l]));
-        rotateHorizontal = false;
       } else {
         rotateX(radians(rectAngle[k][l]));
-        rotateHorizontal = true;
       }
+      rotateHorizontal = !rotateHorizontal;
 
-      displayRect(0, 0, 200, 250, bgCard[k][l], #ffffff);
+      image(cardIdentity[k][l], 0, 0, 80, 80);
+
+      translate(0, 0, -zPos[k][l]);
+      displayRect(0, 0, halfWidthRect * 2, halfHeightRect * 2, textColor, #ffffff);
 
       popMatrix();
+
       rotateRect(k, l);
       l++;
     }
@@ -92,17 +77,18 @@ void setRect() {
   }
 }
 
+int rotateInterval = 10;
+
 void rotateRect(int rowIndex, int columnIndex) {
   if (rotateStatus[rowIndex][columnIndex]) {
-    rectAngle[rowIndex][columnIndex] += 10;
-    if (rectAngle[rowIndex][columnIndex] == 180) {
+    rectAngle[rowIndex][columnIndex] += rotateInterval;
+    if (rectAngle[rowIndex][columnIndex] == 180 || rectAngle[rowIndex][columnIndex] == 0) {
       rotateStatus[rowIndex][columnIndex] = false;
-      rectAngle[rowIndex][columnIndex] = 0;
     }
-  }
-
-  if (!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex]) {
-    bgCard[rowIndex][columnIndex] = #f2f2f2;
+    if (rectAngle[rowIndex][columnIndex] == 180 && !isAbleToRotate[rowIndex][columnIndex]) {
+      isAbleToRotate[rowIndex][columnIndex] = true;
+      cardUp = -1;
+    }
   }
 }
 
@@ -111,10 +97,10 @@ void playGameMouseClicked() {
     780, textWidth("menu") / 2, 15);
 
   int k = 0, l = 0;
-  for (int i = 300; i <= 590; i = i + 290) {
+  for (float i = yPosStart; i <= yLimit; i = i + yRange) {
     l = 0;
-    for (int j = 140; j <= 860; j = j + 240) {
-      clickToRotateRect(k, l, j, i, 100, 125);
+    for (float j = xPosStart; j <= xLimit; j = j + xRange) {
+      clickToRotateRect(k, l, j, i, halfWidthRect, halfHeightRect);
       l++;
     }
     k++;
@@ -123,7 +109,7 @@ void playGameMouseClicked() {
 
 void resetCard() {
   for ( int i = 0; i < 2; i++) {
-    for (int j = 0; j < 4; j++) {
+    for (int j = 0; j < totalCardType; j++) {
       rotateStatus[i][j] = false;
       cardFaceUp[i][j] = false;
       isAbleToRotate[i][j] = true;
@@ -131,11 +117,18 @@ void resetCard() {
   }
 }
 
-void viewAllColorCard() {
+void setAllCardStatus() {
+  rotateStatus = new boolean[2][totalCardType];
+  rectAngle = new float[2][totalCardType];
+  isAbleToRotate = new boolean[2][totalCardType];
+  cardFaceUp = new boolean[2][totalCardType];
+  zPos = new int[2][totalCardType];
+
   for (int i = 0; i < 2; i++) {
-    for (int j = 0; j < 4; j++) {
-      rotateStatus[i][j] = true;
-      bgCard[i][j] = colorCard[i][j];
+    for (int j = 0; j < totalCardType; j++) {
+      rotateStatus[i][j] = false;
+      rectAngle[i][j] = 0;
+      zPos[i][j] = 1;
       isAbleToRotate[i][j] = false;
       cardFaceUp[i][j] = true;
     }
@@ -144,8 +137,8 @@ void viewAllColorCard() {
 
 void setCard() {
   for (int i = 0; i < 2; i++) {
-    for (int j = 0; j < 4; j++) {
-      bgCard[i][j] = #f2f2f2;
+    for (int j = 0; j < totalCardType; j++) {
+      //bgCard[i][j] = #f2f2f2;
       rotateStatus[i][j] = true;
       isAbleToRotate[i][j] = true;
       cardFaceUp[i][j] = false;
@@ -153,9 +146,16 @@ void setCard() {
   }
 }
 
-
 int win = 0;
 boolean sameCard;
+
+void changeRotateDirection(int rowIndex, int columnIndex) {
+  if (rectAngle[rowIndex][columnIndex] == 0) {
+    rotateInterval = 10;
+  } else {
+    rotateInterval = -10;
+  }
+}
 
 void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
   float objHalfWidth, float objHalfHeight) {
@@ -164,22 +164,24 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
     (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {
 
     if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex] && cardUp != 1) {
+      changeRotateDirection(rowIndex, columnIndex);
       rotateStatus[rowIndex][columnIndex] = true;
-      isAbleToRotate[rowIndex][columnIndex] = false;
+      playFlipSound();
     }
 
-    if (!cardFaceUp[rowIndex][columnIndex] && cardUp != 1) {
+    if (!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex] && cardUp != 1) {
+      isAbleToRotate[rowIndex][columnIndex] = false;
+
       cardFaceUp[rowIndex][columnIndex] = true;
       cardUp++;
 
-      bgCard[rowIndex][columnIndex] = colorCard[rowIndex][columnIndex];
-      checkCard[cardUp] = bgCard[rowIndex][columnIndex];
+      checkCard[cardUp] = cardIdentity[rowIndex][columnIndex];
 
       rowCard[cardUp] = rowIndex;
       columnCard[cardUp] = columnIndex;
 
       if (cardUp == 1) {
-        if (hex(checkCard[0]).equals(hex(checkCard[1]))) {
+        if (checkCard[0] == checkCard[1]) {
           for (int i = 0; i < 2; i++) {
             isAbleToRotate[rowCard[i]][columnCard[i]] = false;
           }
@@ -193,9 +195,10 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
       }
     }
 
-    if (win == 4) {
+    if (win == totalCardType) {
       startTimeToRotate = millis();
       setBestTime();
+      playWinSound();
       if (modeBT.equals("NONE") ||
         int(split(timeText, ':')[0]) < int(split(modeBT, ':')[0]) ||
         int(split(timeText, ':')[1]) < int(split(modeBT, ':')[1])) {
@@ -209,48 +212,4 @@ void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,
       }
     }
   }
-}
-
-String modeBT;
-
-void setBestTime() {
-  switch(gameModeName) {
-  case "EASY":
-    modeBT = easyBT;
-    break;
-  case "NORMAL":
-    modeBT = normalBT;
-    break;
-  case "HARD":
-    modeBT = hardBT;
-    break;
-  default:
-    println("Unknown Game Mode");
-  }
-}
-
-void setSaveJSONBT() {
-  json = new JSONObject();
-
-  switch(gameModeName) {
-  case "EASY":
-    json.setString("easy", timeText);
-    json.setString("normal", normalBT);
-    json.setString("hard", hardBT);
-    break;
-  case "NORMAL":
-    json.setString("easy", easyBT);
-    json.setString("normal", timeText);
-    json.setString("hard", hardBT);
-    break;
-  case "HARD":
-    json.setString("easy", easyBT);
-    json.setString("normal", normalBT);
-    json.setString("hard", timeText);
-    break;
-  default:
-    println("Unknown Game Mode");
-  }
-
-  saveJSONObject(json, "../data/record.json");
 }
