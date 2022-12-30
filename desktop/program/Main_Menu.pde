@@ -7,6 +7,8 @@ void mainMenu() {
   rectMode(CENTER);
   displayRect(xCenter, 270, textWidth("MATCHUS"), 10, textColor, -1);
 
+  cursor(ARROW);
+
   displayText("PLAY", 35, 5, textColor, primaryHoverColor, xCenter, 320);
   displayText("SETTINGS", 35, 5, textColor, primaryHoverColor, xCenter, 370);
   displayText("BEST RECORD", 35, 5, textColor, primaryHoverColor, xCenter, 420);

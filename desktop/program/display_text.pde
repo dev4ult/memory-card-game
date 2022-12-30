@@ -8,12 +8,13 @@ void displayText(String text, int textSize, int scaleSize, int regularColor,
   float halfTextHeight = textSize / 2;
 
   fill(regularColor);
-
   if ((mouseX <= xPos + halfTextWidth &&
     mouseX >= xPos -  halfTextWidth) &&
     (mouseY <= yPos + halfTextHeight && mouseY >= yPos - halfTextHeight)) {
     textSize(textSize + scaleSize);
-
+    if (scaleSize != 0) {
+      cursor(HAND);
+    }
     fill(colorOnHover);
   }
 

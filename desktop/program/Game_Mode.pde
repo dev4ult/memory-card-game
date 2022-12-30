@@ -25,3 +25,19 @@ void gameModeMouseClicked() {
   clickToRenderPage("MainMenu", false, xCenter,
     470, textWidth("MENU") / 2, 20);
 }
+
+void setGameMode(int totalCard, float xPos, float yPos, float xRangeCenter, float yRangeCenter, float xLimitRange, float yLimitRange, float halfWidth, float halfHeight) {
+    xPosStart = xPos;
+    yPosStart = yPos;
+    xRange = xRangeCenter;
+    yRange = yRangeCenter;
+    xLimit = xLimitRange;
+    yLimit = yLimitRange;
+    halfWidthRect = halfWidth;
+    halfHeightRect = halfHeight;
+    totalCardType = totalCard;
+}
+
+int totalCardType;
+
+float xPosStart, yPosStart, xRange, yRange, xLimit, yLimit, halfWidthRect, halfHeightRect;
