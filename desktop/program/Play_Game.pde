@@ -94,7 +94,7 @@ void rotateRect(int rowIndex, int columnIndex) {
 
 void playGameMouseClicked() {
   clickToRenderPage("MainMenu", false, 75,
-    780, textWidth("menu") / 2, 15);
+    75, textWidth("menu") / 2, 15);
 
   int k = 0, l = 0;
   for (float i = yPosStart; i <= yLimit; i = i + yRange) {
