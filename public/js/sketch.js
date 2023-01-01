@@ -1,26 +1,34 @@
 const sketchContainer = document.querySelector('#sketch-container');
 let width, height;
 let halfSketchWidth, halfSketchHeight;
+let textXL, textLarge, textMedium, textNormal, textSmall;
 
-function getSize() {
+function setSize() {
   width = sketchContainer.offsetWidth;
   height = sketchContainer.offsetHeight;
   halfSketchWidth = width / 2;
   halfSketchHeight = height / 2;
+  textMedium = width * 0.03;
+  textXL = width * 0.05;
+  textLarge = width * 0.04;
+  textNormal = width * 0.02;
+  textSmall = width * 0.01;
 }
 
 let pixelFont;
 
 function preload() {
-  pixelFont = loadFont('../font/PressStart2P-Regular.ttf');
+  pixelFont = loadFont('../../src/game_file/font/PressStart2P-Regular.ttf');
+  soundFormats('mp3', 'ogg');
+  loadSoundLocal();
 }
 
 function setup() {
-  getSize();
+  setSize();
   darkTheme();
-
   const canvas = createCanvas(width, height, WEBGL);
   canvas.parent(sketchContainer);
+  themeSound.loop();
 }
 
 let page = 'MainMenu';
@@ -30,12 +38,23 @@ function mouseClicked() {
     case 'MainMenu':
       mainMenuMouseClicked();
       break;
+    case 'GameMode':
+      gameModeMouseClicked();
+      break;
     case 'Settings':
       settingsMouseClicked();
       break;
     case 'PlayGame':
       playGameMouseClicked();
       break;
+    case 'WinGame':
+      winGameMouseClicked();
+      break;
+    case 'GameRecord':
+      gameRecordMouseClicked();
+      break;
+    default:
+      console.log('Unknown Game Page');
   }
 }
 
@@ -48,24 +67,38 @@ function setCameraToStatic() {
 }
 
 function draw() {
+  endTime = millis();
   textFont(pixelFont);
   setCameraToMoveByMouse();
+  textAlign(CENTER, CENTER);
 
   switch (page) {
     case 'MainMenu':
-      mainMenu();
+      Main_Menu();
+      break;
+    case 'GameMode':
+      Game_Mode();
       break;
     case 'Settings':
-      settings();
+      Settings();
       break;
     case 'PlayGame':
       setCameraToStatic();
-      playGame();
+      Play_Game();
       break;
+    case 'WinGame':
+      setCameraToMoveByMouse();
+      Win_Game();
+      break;
+    case 'GameRecord':
+      Game_Record();
+      break;
+    default:
+      console.log('Uknown Game Page');
   }
 }
 
 function windowResized() {
-  getSize();
+  setSize();
   canvas = resizeCanvas(width, height, WEBGL);
 }

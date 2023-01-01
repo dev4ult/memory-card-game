@@ -1,39 +1,55 @@
-let theme = 'dark';
+let theme = 'DARK';
 let bgColor, textColor, primaryHoverColor, secondaryHoverColor;
-
-function settings() {
+let music = 'ON';
+function Settings() {
   background(bgColor);
   cursor(ARROW);
 
-  textSize(50);
+  textSize(textXL);
   fill(textColor);
   text('Settings', 0, -150);
 
-  textButton('Theme:' + theme, 35, 5, textColor, primaryHoverColor, 0, -80);
-  textButton('back', 35, 5, textColor, secondaryHoverColor, 0, -30);
+  textButton('THEME:' + theme, textMedium, 5, textColor, primaryHoverColor, 0, -80);
+  textButton('MUSIC:' + music, textMedium, 5, textColor, primaryHoverColor, 0, -30);
+  textButton('-BACK-', textMedium, 5, textColor, secondaryHoverColor, 0, 40);
 }
 
 function settingsMouseClicked() {
   textSize(40);
 
-  objectOver(0, -80, textWidth('Theme:' + theme), 20, () => {
+  objectOver(0, -80, textWidth('THEME:' + theme), textMedium + 5, () => {
+    tick.play();
     renderTheme();
   });
 
-  objectOver(0, -30, textWidth('back') / 2, 20, () => {
+  objectOver(0, -30, textWidth('-BACK-') / 2, textMedium + 5, () => {
+    tick.play();
+
+    if (music == 'ON') {
+      music = 'OFF';
+      themeSound.stop();
+    } else {
+      music = 'ON';
+      themeSound.play();
+    }
+  });
+
+  objectOver(0, 40, textWidth('-BACK-') / 2, textMedium + 5, () => {
+    tick.play();
+
     page = 'MainMenu';
   });
 }
 
 function renderTheme() {
   switch (theme) {
-    case 'dark':
+    case 'DARK':
       lightTheme();
       break;
-    case 'light':
+    case 'LIGHT':
       colorfullTheme();
       break;
-    case 'colorfull':
+    case 'COLORFULL':
       darkTheme();
       break;
     default:
@@ -43,7 +59,7 @@ function renderTheme() {
 }
 
 function darkTheme() {
-  theme = 'dark';
+  theme = 'DARK';
   bgColor = 30;
   textColor = '#f2f2f2';
   primaryHoverColor = '#87f49a';
@@ -51,7 +67,7 @@ function darkTheme() {
 }
 
 function lightTheme() {
-  theme = 'light';
+  theme = 'LIGHT';
   bgColor = '#d9d9d9';
   textColor = '#0d0401';
   primaryHoverColor = '#16cc5c';
@@ -59,7 +75,7 @@ function lightTheme() {
 }
 
 function colorfullTheme() {
-  theme = 'colorfull';
+  theme = 'COLORFULL';
   bgColor = '#4195f0';
   textColor = '#542a91';
   primaryHoverColor = '#b2f007';
