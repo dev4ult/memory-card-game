@@ -17,6 +17,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"
+      integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body class="font-spacemono">
     <div class="container max-w-6xl mx-auto px-3 py-3">
@@ -67,8 +73,11 @@
         </div>
       </nav>
       <main class="mt-5">
-        <h1 class="text-4xl mb-5">Click <span class="text-2xl" style="font-family: 'Press Start 2P'">-Play-</span> to play the game</h1>
-        <div class="w-full h-[85vh]" id="sketch-container"></div>
+        <h1 class="text-4xl mb-5 hidden md:block">Click <span class="text-2xl" style="font-family: 'Press Start 2P'">-PLAY-</span> to start the game</h1>
+        <div class="w-full h-[85vh] hidden md:block" id="sketch-container"></div>
+        <div class="flex items-center justify-center md:hidden w-full h-[85vh]">
+          <h1 class="text-3xl text-center">Game is not available in max width 768px</h1>
+        </div>
       </main>
       <footer class="footer items-center p-4 mt-10">
         <div class="items-center grid-flow-col">
@@ -100,8 +109,16 @@
     <script src="../js/sketch.js"></script>
     <script src="../js/reusable_func/objectOver.js"></script>
     <script src="../js/reusable_func/textButton.js"></script>
-    <script src="../js/game_page/mainMenu.js"></script>
-    <script src="../js/game_page/settings.js"></script>
-    <script src="../js/game_page/playGame.js"></script>
+    <script src="../js/reusable_func/timeSetting.js"></script>
+    <script src="../js/reusable_func/card.js"></script>
+    <script src="../js/reusable_func/loadAssets.js"></script>
+    <script src="../js/reusable_func/connectLocalStorage.js"></script>
+    <script src="../js/reusable_func/soundSetting.js"></script>
+    <script src="../js/game_page/Main_Menu.js"></script>
+    <script src="../js/game_page/Game_Mode.js"></script>
+    <script src="../js/game_page/Settings.js"></script>
+    <script src="../js/game_page/Play_Game.js"></script>
+    <script src="../js/game_page/Win_Game.js"></script>
+    <script src="../js/game_page/Game_Record.js"></script>
   </body>
 </html>
