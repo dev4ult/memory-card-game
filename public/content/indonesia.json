@@ -1,0 +1,36 @@
+{
+  "header": {
+    "anchor-download": "download untuk desktop",
+    "lang": "bahasa"
+  },
+  "nav": {
+    "index": "Main",
+    "doc": "Dokumentasi",
+    "about": "Tentang Kami"
+  },
+  "documentation": {
+    "overview": {
+      "title": "Gambaran",
+      "desc": "Library yang kami gunakan untuk membuat game ini adalah P5.JS untuk website dan Processing untuk dekstop sebagai platformnya.",
+      "ref-title": "referensi"
+    },
+    "desktop-v": {
+      "title": "Versi Desktop",
+      "desc": "Jika ingin menjalankan game di desktop (windows), Dapat mengunduh game di link yang sudah disediakan"
+    },
+    "project-s": {
+      "title": "Sumber",
+      "desc": "Game ini bersumber terbuka di"
+    },
+    "program-doc": {
+      "title": "Dokumentasi Program",
+      "desc": "Bagian ini merupakan penjelasan mengenai dokumentasi program yang telah dibuat dengan dua bagian yakni penjelasan program processing (library java) dan p5js (library javascript). Untuk melihat program dokumentasi salah satu library yang sudah disebutkan, pilih library terlebih dahulu di bagian ubah dokumentasi.",
+      "change-doc-title": "ubah dokumentasi",
+      "program-s": {
+        "render": {
+          "title": "render"
+        }
+      }
+    }
+  }
+}
