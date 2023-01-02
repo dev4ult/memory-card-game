@@ -68,7 +68,6 @@ void defaultCamera() {
 }
 
 void draw() {
-
   endTime = millis();
   switch(page) {
   case "MainMenu":

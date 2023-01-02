@@ -74,7 +74,7 @@
         <h1 class="text-3xl mb-3 font-semibold underline underline-offset-8" id="desktop-version">Desktop Version</h1>
         <div class="mb-7 ml-3">
           <p class="desc text-lg">If you want to run the game in the desktop (windows), you can download the game below</p>
-          <a href="https://drive.google.com/file/d/1ozaYeH_NXKcb-1CMb0Khc_78SO_dCA37/view?usp=share_link" class="btn btn-sm btn-accent mt-3" target="_blank">download link</a>
+          <a href="https://drive.google.com/file/d/15RlIRsumdB8-DWAO6Ke3Is6UQylLgUyn/view?usp=sharing" class="btn btn-sm btn-accent mt-3" target="_blank">download link</a>
         </div>
         <input type="checkbox" id="no-download" class="modal-toggle" />
         <div class="modal modal-bottom sm:modal-middle">
@@ -105,6 +105,7 @@
             <button id="processing-btn" type="button" class="btn rounded-none btn-accent">processing</button>
             <button id="p5js-btn" type="button" class="btn btn-outline rounded-none btn-accent">p5 js</button>
           </div>
+          <!-- P5 JS -->
           <div id="p5-program" class="hidden mt-3">
             <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
 
@@ -119,18 +120,186 @@
             </div>
             <p class="text-md italic">Note: to create a procedure, javascript use the function keyword even though it is not a function because javascript don't have the void keyword</p>
           </div>
+
+          <!-- PROCESSING -->
           <div id="processing-program" class="mt-3">
-            <h3 class="text-xl font-semibold mt-3">{ setup() function }</h3>
-            <p class="text-lg">The setup we make using processing :</p>
-            <div class="mockup-code mt-3">
-              <pre data-prefix="1"><code>void setup() {</code></pre>
-              <pre data-prefix="2"><code>   size(1000, 800, P3D);</code></pre>
-              <pre data-prefix="3"><code>   xCenter = width / 2;</code></pre>
-              <pre data-prefix="4"><code>   pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);</code></pre>
-              <pre data-prefix="5"><code>   textFont(pixelFont);</code></pre>
-              <pre data-prefix="6"><code>   smooth();</code></pre>
-              <pre data-prefix="7"><code>   shuffleColor(colorCard);</code></pre>
-              <pre data-prefix="8"><code>}</code></pre>
+            <!-- RENDER -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Render.pde</h2>
+              <!-- GLOBAL VARIABLE -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>String page = "MainMenu";</code></pre>
+                  <pre data-prefix="2"><code>PFont pixelFont;</code></pre>
+                  <pre data-prefix="3"><code>JSONObject json;</code></pre>
+                  <pre data-prefix="4"><code>int xCenter;</code></pre>
+                  <pre data-prefix="5"><code>int startTime, endTime;</code></pre>
+                </div>
+              </div>
+              <!-- SETUP() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setup()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setup() {</code></pre>
+                  <pre data-prefix="2"><code>  reloadBestTime();</code></pre>
+                  <pre data-prefix="3"><code>  setupAllSound();</code></pre>
+                  <pre data-prefix="4"><code></code></pre>
+                  <pre data-prefix="5"><code>  pixelFont = createFont("../font/PressStart2P-Regular.ttf", 50);</code></pre>
+                  <pre data-prefix="6"><code>  textFont(pixelFont);</code></pre>
+                  <pre data-prefix="7"><code></code></pre>
+                  <pre data-prefix="8"><code>  size(1000, 800, P3D);</code></pre>
+                  <pre data-prefix="9"><code>  xCenter = width / 2;</code></pre>
+                  <pre data-prefix="10"><code></code></pre>
+                  <pre data-prefix="11"><code>  smooth();</code></pre>
+                  <pre data-prefix="12"><code>  imageMode(CENTER);</code></pre>
+                  <pre data-prefix="13"><code>  themeSound.play();</code></pre>
+                  <pre data-prefix="14"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- CLICKTORENDERPAGE() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">clickToRenderPage()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void clickToRenderPage(String thePage, boolean changeTheme, float xPos, float yPos,</code></pre>
+                  <pre data-prefix="2"><code>                       float objHalfWidth, float objHalfHeight) {</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  if ((mouseX <= xPos + objHalfWidth && mouseX >= xPos - objHalfWidth) && (mouseY <= yPos +</code></pre>
+                  <pre data-prefix="5"><code>       objHalfHeight && mouseY >= yPos - objHalfHeight)) {</code></pre>
+                  <pre data-prefix="6"><code></code></pre>
+                  <pre data-prefix="7"><code>    page = thePage;</code></pre>
+                  <pre data-prefix="8"><code>    playTickSound();</code></pre>
+                  <pre data-prefix="9"><code>    textFont(pixelFont);</code></pre>
+                  <pre data-prefix="10"><code></code></pre>
+                  <pre data-prefix="11"><code>    if (changeTheme) {</code></pre>
+                  <pre data-prefix="12"><code>        renderTheme();</code></pre>
+                  <pre data-prefix="13"><code>    }</code></pre>
+                  <pre data-prefix="14"><code>  }</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- MOUSECLICKED() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">mouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void mouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  switch(page) {</code></pre>
+                  <pre data-prefix="3"><code>  case "MainMenu":</code></pre>
+                  <pre data-prefix="4"><code>    mainMenuMouseClicked();</code></pre>
+                  <pre data-prefix="5"><code>    break;</code></pre>
+                  <pre data-prefix="6"><code>  case "SettingsPage":</code></pre>
+                  <pre data-prefix="7"><code>    settingsPageMouseClicked();</code></pre>
+                  <pre data-prefix="8"><code>    break;</code></pre>
+                  <pre data-prefix="9"><code>  case "PlayGame":</code></pre>
+                  <pre data-prefix="10"><code>    defaultCamera();</code></pre>
+                  <pre data-prefix="11"><code>    playGameMouseClicked();</code></pre>
+                  <pre data-prefix="12"><code>    break;</code></pre>
+                  <pre data-prefix="13"><code>  case "WinPage":</code></pre>
+                  <pre data-prefix="14"><code>    winGameMouseClicked();</code></pre>
+                  <pre data-prefix="15"><code>    break;</code></pre>
+                  <pre data-prefix="16"><code>  case "RecordPage":</code></pre>
+                  <pre data-prefix="17"><code>    recordPageMouseClicked();</code></pre>
+                  <pre data-prefix="18"><code>    break;</code></pre>
+                  <pre data-prefix="19"><code>  case "GameMode":</code></pre>
+                  <pre data-prefix="20"><code>    gameModeMouseClicked();</code></pre>
+                  <pre data-prefix="21"><code>    break;</code></pre>
+                  <pre data-prefix="22"><code>  default:</code></pre>
+                  <pre data-prefix="23"><code>    println("page does not exits");</code></pre>
+                  <pre data-prefix="24"><code>  }</code></pre>
+                  <pre data-prefix="25"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- SETCAMERA() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setCamera()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setCamera() {</code></pre>
+                  <pre data-prefix="2"><code>  camera(mouseX, mouseY,</code></pre>
+                  <pre data-prefix="3"><code>        (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);</code></pre>
+                  <pre data-prefix="4"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- DEFAULTCAMERA() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">defaultCamera()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void defaultCamera() {</code></pre>
+                  <pre data-prefix="2"><code>  camera();</code></pre>
+                  <pre data-prefix="3"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- DRAW() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">draw()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void draw() {</code></pre>
+                  <pre data-prefix="2"><code>  endTime = millis();</code></pre>
+                  <pre data-prefix="3"><code>  switch(page) {</code></pre>
+                  <pre data-prefix="4"><code>  case "MainMenu":</code></pre>
+                  <pre data-prefix="5"><code>    setCamera();</code></pre>
+                  <pre data-prefix="6"><code>    mainMenu();</code></pre>
+                  <pre data-prefix="7"><code>    break;</code></pre>
+                  <pre data-prefix="8"><code>  case "SettingsPage":</code></pre>
+                  <pre data-prefix="9"><code>    setCamera();</code></pre>
+                  <pre data-prefix="10"><code>    settingsPage();</code></pre>
+                  <pre data-prefix="11"><code>    break;</code></pre>
+                  <pre data-prefix="12"><code>  case "PlayGame":</code></pre>
+                  <pre data-prefix="13"><code>    defaultCamera();</code></pre>
+                  <pre data-prefix="14"><code>    playGame();</code></pre>
+                  <pre data-prefix="15"><code>    break;</code></pre>
+                  <pre data-prefix="16"><code>  case "GameMode":</code></pre>
+                  <pre data-prefix="17"><code>    setCamera();</code></pre>
+                  <pre data-prefix="18"><code>    gameMode();</code></pre>
+                  <pre data-prefix="19"><code>    break;</code></pre>
+                  <pre data-prefix="20"><code>  case "WinPage":</code></pre>
+                  <pre data-prefix="21"><code>    setCamera();</code></pre>
+                  <pre data-prefix="22"><code>    winGame();</code></pre>
+                  <pre data-prefix="23"><code>    break;</code></pre>
+                  <pre data-prefix="24"><code>  case "RecordPage":</code></pre>
+                  <pre data-prefix="25"><code>    setCamera();</code></pre>
+                  <pre data-prefix="26"><code>    recordPage();</code></pre>
+                  <pre data-prefix="27"><code>    break;</code></pre>
+                  <pre data-prefix="28"><code>  default:</code></pre>
+                  <pre data-prefix="29"><code>    println("page does not exits");</code></pre>
+                  <pre data-prefix="30"><code>  }</code></pre>
+                  <pre data-prefix="31"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- MAIN MENU -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Main_Menu.pde</h2>
+              <!-- mainMenu() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">mainMenu()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix=""><code>void mainMenu() {</code></pre>
+                  <pre data-prefix=""><code>  background(bgColor);</code></pre>
+                  <pre data-prefix=""><code>  xCenter = width / 2;</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>  displayText("MATCHUS", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>  rectMode(CENTER);</code></pre>
+                  <pre data-prefix=""><code>  displayRect(xCenter, 270, textWidth("MATCHUS"), 10, textColor, -1);</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>  cursor(ARROW);</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>  displayText("PLAY", 35, 5, textColor, primaryHoverColor, xCenter, 320);</code></pre>
+                  <pre data-prefix=""><code>  displayText("SETTINGS", 35, 5, textColor, primaryHoverColor, xCenter, 370);</code></pre>
+                  <pre data-prefix=""><code>  displayText("BEST RECORD", 35, 5, textColor, primaryHoverColor, xCenter, 420);</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>  displayText("EXIT", 35, 5, textColor, secondaryHoverColor, xCenter, 470);</code></pre>
+                  <pre data-prefix=""><code>}</code></pre>
+                </div>
+              </div>
             </div>
           </div>
         </div>
