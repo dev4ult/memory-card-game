@@ -1,5 +1,5 @@
 void displayText(String text, int textSize, int scaleSize, int regularColor,
-  int colorOnHover, float xPos, float yPos) {
+                 int colorOnHover, float xPos, float yPos) {
 
   textAlign(CENTER, CENTER);
   textSize(textSize);

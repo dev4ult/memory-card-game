@@ -26,11 +26,93 @@
       "title": "Dokumentasi Program",
       "desc": "Bagian ini merupakan penjelasan mengenai dokumentasi program yang telah dibuat dengan dua bagian yakni penjelasan program processing (library java) dan p5js (library javascript). Untuk melihat program dokumentasi salah satu library yang sudah disebutkan, pilih library terlebih dahulu di bagian ubah dokumentasi.",
       "change-doc-title": "ubah dokumentasi",
-      "program-s": {
+      "processing": {
         "render": {
-          "title": "render"
+          "global-variable": "pendeklarasian untuk variabel atau object font, json, dan juga inisialisasi variable page atau yang nantinya dipakai untuk menrender halaman",
+          "setup-desc": "merupakan prosedur yang dibuat untuk menentukan konfigurasi awal dari program, sehingga kode yang berada di dalamnya hanya akan dieksekusi sekali.",
+          "clickToRenderPage-desc": "merupakan prosedur yang dibuat untuk mengatur variable page ketika kursor komputer mengklik posisi tertentu, maka program akan me-render prosedur lain sesuai dengan yang ada pada statement switch case pada prosedur draw().",
+          "mouseClicked-desc": "merupakan prosedur yang dibuat untuk memberikan event mouse click pada program permainan. Event mouse click  yang diberikan pada program tergantung pada kondisi yang memenuhi, sesuai dengan yang ada pada statement switch case.",
+          "setCamera-desc": "merupakan prosedur yang dibuat untuk mengatur etak posisi kamera agar dinamis, jadi posisi kamera akan berubah sesuai dengan digerakkannya kursor komputer.",
+          "defaultCamera-desc": "merupakan prosedur yang dibuat untuk mengatur letak posisi kamera agar statis.",
+          "draw": "merupakan prosedur yang dibuat dimana pada bagian ini kode skrip akan dijalankan berkali - kali, selama program berjalan. Pada prosedur ini, terdapat statement switch case yang berfungsi untuk menentukan prosedur mana yang akan di render berdasarkan variable page yang telah diinisialisasi."
+        },
+        "main-menu": {
+          "mainMenu-desc": "merupakan prosedur yang berisikan kode untuk membuat tampilan menu utama pada permainan.",
+          "clickToExitGame-desc": "merupakan prosedur dengan parameter yPos yang dibuat dengan tujuan agar ketika text exit pada menu utama di klik atau kursor komputer mengklik posisi tertentu maka program akan menutup.",
+          "mainMenuMouseClicked-desc": "merupakan prosedur yang dibuat untuk mengatur apabila salah satu menu pilihan pada bagian menu utama di klik atau kursor komputer mengklik posisi tertentu maka program akan me-render prosedur lain atau berpindah halaman."
+        },
+        "game-mode": {
+          "global-variable": "deklarasi variabel nama mode game untuk menentukan game yang mana untuk dirender dihalaman selanjutnya sekaligus menentukan berapa kartu yang akan ditampilkan. Lalu, pendeklarasian posisi kartu dan area di windowny yang disediakan oleh game",
+          "gameMode-desc": "merupakan prosedur yang berisikan kode untuk membuat tampilan menu mode game pada permainan. Beberapa prosedur pada kode di atas seperti display text akan dijabarkan pada bagian selanjutnya.",
+          "gameModeMouseClicked-desc": "merupakan prosedur yang dibuat agar ketika salah satu mode game di pilih atau jika kursor komputer berada di posisi tertentu di klik maka program akan berpindah halaman. Prosedur setGameStart() pada kode di atas akan dijelaskan pada bagian selanjutnya.",
+          "setGameMode": "merupakan prosedur yang dibuat untuk mengatur posisi letak dari rectangle atau objek kartu."
+        },
+        "settings": {
+          "settingsPage-desc": "merupakan prosedur yang dibuat untuk membuat tampilan halaman setting permainan.",
+          "settingsPageMouseClicked-desc": "merupakan prosedur yang dibuat untuk mengatur apabila salah satu menu pilihan pada bagian halaman setting di klik atau kursor komputer mengklik posisi tertentu pada halaman settings maka program akan me-render prosedur lain atau berpindah halaman."
+        },
+        "theme": {
+          "global-variable": "deklarasi dan inisialisasi untuk tema warna dari text dan background game",
+          "themeChangeProcedure-desc": "tiga prosedur yang dijalankan untuk mengganti tema warna dari game",
+          "renderTheme-desc": "prosedur yang dijalankan untuk mengganti variabel tema yang dipakai untuk menjalankan prosedur yang mengganti warna dari tema"
+        },
+        "play-game": {
+          "global-variable": "deklarasi beberapa variabel dan array sebagai status dari kartu yang nantinya akan dimainkan oleh player",
+          "playGame-desc": "merupakan prosedur yang dibuat untuk membuat tampilan pada permainan",
+          "shuffleCard-desc": "merupakan prosedur dengan parameter array dua dimensi dengan tipe data PImage yang menyimpan data gambar, yang dibuat untuk mengacak value pada array atau gambar kartu agar ketika permainan dimulai secara berulang maka gambar pada kartu akan muncul secara acak pada rectangle atau kartu yang ada.",
+          "setRect-desc": "merupakan prosedur yang dibuat untuk mengatur atau menampilkan rectangle atau kartu yang akan muncul. Pada prosedur ini, efek putar dari kartu juga diatur. Ketika kartu pertama yang diklik berputar secara vertikal maka kartu selanjutnya akan berputar secara horizontal, begitupun juga sebaliknya untuk menambahkan variasi dari animasi kartu.",
+          "rotateRect-desc": "merupakan prosedur yang dibuat untuk memutar rectangle atau kartu. Cara kerja dari prosedur ini adalah ketika status rotate dari kartu bernilai true, maka sudut kartu akan bertambah sebesar 10 sampai nilainya sama dengan 180. Jika sudut kartu bernilai 180, maka status rotate akan di set menjadi false dan status kartu mampu diputar menjadi false.",
+          "playGameMouseClicked-desc": "merupakan prosedur yang dibuat untuk mengatur kondisi apabila kursor komputer mengklik posisi tertentu pada halaman permainan.",
+          "resetCard-desc": "merupakan prosedur yang dibuat untuk sebuah prosedur yang dibuat untuk mengatur semua kondisi kartu atau rectangle yang tampil pada halaman permainan agar semua kartunya menutup.",
+          "setAllCardStatus-desc": "merupakan sebuah prosedur yang dibuat untuk mengatur semua kondisi kartu atau rectangle yang tampil pada halaman permainan agar semua kartunya membuka.",
+          "setCard-desc": "merupakan sebuah prosedur yang dibuat untuk mengatur semua kondisi kartu atau rectangle yang tampil pada halaman permainan agar semua kartunya menutup, yang artinya status rotate dari kartu adalah true, status apakah kartu dapat diputar adalah true, dan status kartu telah diputar adalah false.",
+          "changeRotateDirection-desc": "merupakan prosedur untuk mengubah arah berputar dari rectangle atau kartu.",
+          "clickToRotateRect": {
+            "desc": "merupakan prosedur yang dibuat untuk mengatur apabila kursor komputer mengklik posisi tertentu di bagian rectangle maka rectangle akan berputar. Pada prosedur ini, terdapat beberapa kondisi yang terjadi ketika rectangle diklik",
+            "list": [
+              "Apabila hanya satu kartu yang diklik, maka kartu yang diklik tersebut tidak dapat diputar kembali.",
+              "Apabila dua kartu telah diklik maka dua kartu tersebut akan dicek kesamaannya berdasarkan gambar dari kartunya.",
+              "Apabila semua kartu telah terbuka, maka record score akan disimpan ke dalam file JSON."
+            ]
+          }
+        },
+        "win-game": {
+          "global-variable": "deklarasi variabel newRecord untuk menampung rekor baru setelah bermain game",
+          "winGame-desc": "merupakan sebuah prosedur yang dibuat untuk membuat tampilan yang akan tampil ketika permainan selesai.",
+          "displayRecordTime-desc": "merupakan prosedur yang dibuat untuk mengatur tampilan status score waktu yang didapat dari permainan, sehingga tampilan ketika bermain untuk pertama kalinya dan tampilan ketika sudah pernah memainkannya berbeda.",
+          "winGameMouseClicked-desc": "merupakan prosedur yang dibuat untuk mengatur kondisi apabila kursor komputer mengklik posisi tertentu pada halaman win game."
+        },
+        "connect-json": {
+          "global-variable": "deklarasi variabel mode game best time untuk menyimpan nilai rekor baru setelah permainan dan disimpan ke json",
+          "setBestTime-desc": "merupakan prosedur yang dibuat untuk mengatur atau men-set best score dari permainan.",
+          "setSaveJSONBT-desc": "merupakan prosedur yang dibuat untuk menyimpan data best score dari permainan ke dalam bentuk JSON file. Sehingga, apabila program ditutup dan kemudian dijalankan kembali, data best score yang ada sebelumnya tidak akan hilang."
+        },
+        "record-page": {
+          "recordPage-desc": "merupakan prosedur yang dibuat untuk membuat tampilan halaman record score dari permainan.",
+          "recordPageMouseClicked": "merupakan prosedur yang dibuat untuk mengatur apabila salah satu menu pilihan pada bagian halaman record di klik atau kursor komputer mengklik posisi tertentu pada halaman record maka program akan me-render prosedur lain atau berpindah halaman."
+        },
+        "time-setting": {
+          "global-variable": "pendeklarasian variabel untuk menyimpan nilai nilai dari waktu dan dipakai dalam game",
+          "reloadBestTime-desc": "merupakan prosedur yang dibuat untuk mengambil data dari json yang nantinya digunakan untuk menampilkan best record permainan.",
+          "setGameStart-desc" : "merupakan prosedur yang dibuat untuk menghitung waktu permainan saat pertama kali game di mulai.",
+          "gameType-desc": "merupakan prosedur yang dibuat untuk menentukan mode game yang di pilih, yang nantinya digunakan untuk best record.",
+          "timeTicking-desc": "beberapa fungsi yang dipakai untuk mendapatkan nilai interval waktu",
+          "getTime-desc": "merupakan prosedur yang dibuat untuk mendeklarasikan waktu yang nantinya digunakan untuk menghitung waktu yang telah ditetapkan.",
+          "waitTimeGame-desc": "beberapa prosedur yang digunakan untuk menunggu dalam jalannya game seperti contoh menunggu selama 3 detik untuk melihat card game yang nantinya setelah 3 detik card game akan merotasi menjadi warna putih semua dan game di mulai."
+        },
+        "display-rect": {
+          "displayRect-desc": "merupakan prosedur yang dibuat untuk menampilkan objek rectangle atau bangun persegi. Parameter pada prosedur ini terdiri dari posisi x untuk mengatur letak rectangle pada posisi x, posisi y untuk mengatur letak rectangle pada posisi y, lebar rectangle, tinggi  rectangle, warna permukaan rectangle, dan juga warna garis sisi pada rectangle."
+        },
+        "display-text": {
+          "displayText-desc": "merupakan prosedur yang dibuat untuk menampilkan teks dan juga memberikan pengaturan pada teks seperti ukuran teks, skala teks, warna teks, warna teks ketika hover, serta posisi x dan juga y nya. Selain itu, pada prosedur ini juga ditambahkan sebuah kode untuk meng-hover teks, sehingga apabila kursor berada di atas teks, maka tampilan teks akan berubah."
+        },
+        "play-sound": {
+          "global-variable": "import library sound dan deklarasi object suara",
+          "setupAllSound-desc": "merupakan prosedur yang dibuat untuk mengatur sound atau suara yang akan digunakan pada permainan kemudian menyimpannya pada variable yang telah dideklarasikan.",
+          "playSound": "prosedur diatas merupakan prosedur yang dibuat untuk menjalankan sound atau suara yang telah diatur sebelumnya, sehingga ketika salah satu prosedur tersebut dipanggil maka suara atau sound yang telah diatur akan dijalankan."
         }
-      }
+      },
+      "p5js": {}
     }
   }
 }

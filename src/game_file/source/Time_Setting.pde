@@ -1,14 +1,20 @@
 String easyBT, normalBT, hardBT;
 
+int startTimeToRotate;
+
+int minuteTime = 0;
+int secondTime = 0;
+
+String timeText;
+
+boolean gameStart;
+
 void reloadBestTime() {
   json = loadJSONObject("../data/record.json");
   easyBT = json.getString("easy");
   normalBT = json.getString("normal");
   hardBT = json.getString("hard");
 }
-
-int minuteTime = 0;
-int secondTime = 0;
 
 void setGameStart(float yPos, String gameMode) {
   textSize(35);
@@ -45,10 +51,12 @@ void gameType() {
   }
 }
 
-String timeText;
-
 int timeTicking() {
   return endTime - startTime;
+}
+
+int timeWaitToRotateTicking() {
+  return endTime - startTimeToRotate;
 }
 
 void getTime() {
@@ -67,8 +75,6 @@ void getTime() {
   timeText = minuteTime + ":" + secondTime;
   displayText(timeText, 25, 0, textColor, textColor, 915, 75);
 }
-
-boolean gameStart;
 
 void waitToStartTheGame() {
   int interval = 3;
@@ -90,12 +96,6 @@ void waitToRotate() {
 
     sameCard = true;
   }
-}
-
-int startTimeToRotate;
-
-int timeWaitToRotateTicking() {
-  return endTime - startTimeToRotate;
 }
 
 void waitAfterWin() {

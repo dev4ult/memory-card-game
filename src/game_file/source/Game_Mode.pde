@@ -1,4 +1,6 @@
 String gameModeName;
+int totalCardType;
+float xPosStart, yPosStart, xRange, yRange, xLimit, yLimit, halfWidthRect, halfHeightRect;
 
 void gameMode() {
   background(bgColor);
@@ -37,7 +39,3 @@ void setGameMode(int totalCard, float xPos, float yPos, float xRangeCenter, floa
     halfHeightRect = halfHeight;
     totalCardType = totalCard;
 }
-
-int totalCardType;
-
-float xPosStart, yPosStart, xRange, yRange, xLimit, yLimit, halfWidthRect, halfHeightRect;
