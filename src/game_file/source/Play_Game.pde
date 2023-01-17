@@ -1,5 +1,10 @@
 boolean rotateHorizontal = true;
 
+int win = 0;
+boolean sameCard;
+
+int rotateInterval = 10;
+
 boolean[][] rotateStatus;
 float[][] rectAngle;
 
@@ -47,7 +52,6 @@ void shuffleCard(PImage[][] array) {
 }
 
 void setRect() {
-
   int k = 0, l = 0;
   for (float i = yPosStart; i <= yLimit; i = i + yRange) {
     l = 0;
@@ -77,7 +81,6 @@ void setRect() {
   }
 }
 
-int rotateInterval = 10;
 
 void rotateRect(int rowIndex, int columnIndex) {
   if (rotateStatus[rowIndex][columnIndex]) {
@@ -145,9 +148,6 @@ void setCard() {
     }
   }
 }
-
-int win = 0;
-boolean sameCard;
 
 void changeRotateDirection(int rowIndex, int columnIndex) {
   if (rectAngle[rowIndex][columnIndex] == 0) {

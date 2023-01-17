@@ -126,7 +126,7 @@
             <!-- RENDER -->
             <div class="mt-12">
               <h2 class="text-2xl font-semibold">Render.pde</h2>
-              <!-- GLOBAL VARIABLE -->
+              <!-- Global Variable -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">Global Variable</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -138,7 +138,7 @@
                   <pre data-prefix="5"><code>int startTime, endTime;</code></pre>
                 </div>
               </div>
-              <!-- SETUP() -->
+              <!-- setup() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">setup()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -159,7 +159,7 @@
                   <pre data-prefix="14"><code>}</code></pre>
                 </div>
               </div>
-              <!-- CLICKTORENDERPAGE() -->
+              <!-- clickToRenderPage() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">clickToRenderPage()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -181,7 +181,7 @@
                   <pre data-prefix="15"><code>}</code></pre>
                 </div>
               </div>
-              <!-- MOUSECLICKED() -->
+              <!-- mouseClicked() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">mouseClicked()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -213,7 +213,7 @@
                   <pre data-prefix="25"><code>}</code></pre>
                 </div>
               </div>
-              <!-- SETCAMERA() -->
+              <!-- setCamera() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">setCamera()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -224,7 +224,7 @@
                   <pre data-prefix="4"><code>}</code></pre>
                 </div>
               </div>
-              <!-- DEFAULTCAMERA() -->
+              <!-- defaultCamera() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">defaultCamera()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -234,7 +234,7 @@
                   <pre data-prefix="3"><code>}</code></pre>
                 </div>
               </div>
-              <!-- DRAW() -->
+              <!-- draw() -->
               <div class="mt-10">
                 <h3 class="text-xl font-medium mt-3">draw()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
@@ -281,23 +281,925 @@
                 <h3 class="text-xl font-medium mt-3">mainMenu()</h3>
                 <p class="text-lg">The setup we make using processing :</p>
                 <div class="mockup-code mt-3">
-                  <pre data-prefix=""><code>void mainMenu() {</code></pre>
-                  <pre data-prefix=""><code>  background(bgColor);</code></pre>
-                  <pre data-prefix=""><code>  xCenter = width / 2;</code></pre>
-                  <pre data-prefix=""><code></code></pre>
-                  <pre data-prefix=""><code>  displayText("MATCHUS", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
-                  <pre data-prefix=""><code></code></pre>
-                  <pre data-prefix=""><code>  rectMode(CENTER);</code></pre>
-                  <pre data-prefix=""><code>  displayRect(xCenter, 270, textWidth("MATCHUS"), 10, textColor, -1);</code></pre>
-                  <pre data-prefix=""><code></code></pre>
-                  <pre data-prefix=""><code>  cursor(ARROW);</code></pre>
-                  <pre data-prefix=""><code></code></pre>
-                  <pre data-prefix=""><code>  displayText("PLAY", 35, 5, textColor, primaryHoverColor, xCenter, 320);</code></pre>
-                  <pre data-prefix=""><code>  displayText("SETTINGS", 35, 5, textColor, primaryHoverColor, xCenter, 370);</code></pre>
-                  <pre data-prefix=""><code>  displayText("BEST RECORD", 35, 5, textColor, primaryHoverColor, xCenter, 420);</code></pre>
-                  <pre data-prefix=""><code></code></pre>
-                  <pre data-prefix=""><code>  displayText("EXIT", 35, 5, textColor, secondaryHoverColor, xCenter, 470);</code></pre>
+                  <pre data-prefix="1"><code>void mainMenu() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code>  xCenter = width / 2;</code></pre>
+                  <pre data-prefix="4"><code></code></pre>
+                  <pre data-prefix="5"><code>  displayText("MATCHUS", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
+                  <pre data-prefix="6"><code></code></pre>
+                  <pre data-prefix="7"><code>  rectMode(CENTER);</code></pre>
+                  <pre data-prefix="8"><code>  displayRect(xCenter, 270, textWidth("MATCHUS"), 10, textColor, -1);</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>  cursor(ARROW);</code></pre>
+                  <pre data-prefix="11"><code></code></pre>
+                  <pre data-prefix="12"><code>  displayText("PLAY", 35, 5, textColor, primaryHoverColor, xCenter, 320);</code></pre>
+                  <pre data-prefix="13"><code>  displayText("SETTINGS", 35, 5, textColor, primaryHoverColor, xCenter, 370);</code></pre>
+                  <pre data-prefix="14"><code>  displayText("BEST RECORD", 35, 5, textColor, primaryHoverColor, xCenter, 420);</code></pre>
+                  <pre data-prefix="15"><code></code></pre>
+                  <pre data-prefix="16"><code>  displayText("EXIT", 35, 5, textColor, secondaryHoverColor, xCenter, 470);</code></pre>
+                  <pre data-prefix="17"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- clickToExitGame() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">clickToExitGame()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void clickToExitGame(float yPos) {</code></pre>
+                  <pre data-prefix="2"><code>  textSize(35);</code></pre>
+                  <pre data-prefix="3"><code>  float halfExitText = textWidth("EXIT") / 2;</code></pre>
+                  <pre data-prefix="4"><code>  if ((mouseX <= xCenter + halfExitText && mouseX >= xCenter -  halfExitText) &&</code></pre>
+                  <pre data-prefix="5"><code>    (mouseY <= yPos + 15 && mouseY >= yPos - 15)) {</code></pre>
+                  <pre data-prefix="6"><code>    exit();</code></pre>
+                  <pre data-prefix="7"><code>  }</code></pre>
+                  <pre data-prefix="8"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- mainMenuMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">mainMenuMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void mainMenuMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  clickToRenderPage("GameMode", false, xCenter,</code></pre>
+                  <pre data-prefix="3"><code>    320, textWidth("Play") / 2, 15);</code></pre>
+                  <pre data-prefix="4"><code>  clickToRenderPage("SettingsPage", false, xCenter,</code></pre>
+                  <pre data-prefix="5"><code>    370, textWidth("Settings") / 2, 15);</code></pre>
+                  <pre data-prefix="6"><code>  clickToRenderPage("RecordPage", false, xCenter,</code></pre>
+                  <pre data-prefix="7"><code>    420, textWidth("Best Record") / 2, 15);</code></pre>
+                  <pre data-prefix="8"><code>  clickToExitGame(470);</code></pre>
+                  <pre data-prefix="9"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- GAME MODE -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Game_Mode.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>String gameModeName;</code></pre>
+                  <pre data-prefix="2"><code>int totalCardType;</code></pre>
+                  <pre data-prefix="3"><code>float xPosStart, yPosStart, xRange, yRange, xLimit, yLimit, halfWidthRect, halfHeightRect;</code></pre>
+                </div>
+              </div>
+              <!-- gameMode() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">gameMode()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void gameMode() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  displayText("Game Mode", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
+                  <pre data-prefix="5"><code>  displayText("EASY", 35, 5, textColor, primaryHoverColor, xCenter, 300);</code></pre>
+                  <pre data-prefix="6"><code>  displayText("NORMAL", 35, 5, textColor, primaryHoverColor, xCenter, 350);</code></pre>
+                  <pre data-prefix="7"><code>  displayText("HARD", 35, 5, textColor, primaryHoverColor, xCenter, 400);</code></pre>
+                  <pre data-prefix="8"><code>  displayText("MENU", 35, 5, textColor, secondaryHoverColor, xCenter, 470);</code></pre>
+                  <pre data-prefix="9"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- gameModeMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">gameModeMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void gameModeMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  setGameStart(300, "EASY");</code></pre>
+                  <pre data-prefix="3"><code>  setGameStart(350, "NORMAL");</code></pre>
+                  <pre data-prefix="4"><code>  setGameStart(400, "HARD");</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>  clickToRenderPage("PlayGame", false, xCenter,</code></pre>
+                  <pre data-prefix="7"><code>    300, textWidth("EASY") / 2, 20);</code></pre>
+                  <pre data-prefix="8"><code>  clickToRenderPage("PlayGame", false, xCenter,</code></pre>
+                  <pre data-prefix="9"><code>    350, textWidth("NORMAL") / 2, 20);</code></pre>
+                  <pre data-prefix="10"><code>  clickToRenderPage("PlayGame", false, xCenter,</code></pre>
+                  <pre data-prefix="11"><code>    400, textWidth("HARD") / 2, 20);</code></pre>
+                  <pre data-prefix="12"><code></code></pre>
+                  <pre data-prefix="13"><code>  clickToRenderPage("MainMenu", false, xCenter,</code></pre>
+                  <pre data-prefix="14"><code>    470, textWidth("MENU") / 2, 20);</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setGameMode() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setGameMode()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setGameMode(int totalCard, float xPos, float yPos, float xRangeCenter, float yRangeCenter, float</code></pre>
+                  <pre data-prefix="3"><code>                 xLimitRange, float yLimitRange, float halfWidth, float halfHeight) {</code></pre>
+                  <pre data-prefix="4"><code>  xPosStart = xPos;</code></pre>
+                  <pre data-prefix="5"><code>  yPosStart = yPos;</code></pre>
+                  <pre data-prefix="6"><code>  xRange = xRangeCenter;</code></pre>
+                  <pre data-prefix="7"><code>  yRange = yRangeCenter;</code></pre>
+                  <pre data-prefix="8"><code>  xLimit = xLimitRange;</code></pre>
+                  <pre data-prefix="9"><code>  yLimit = yLimitRange;</code></pre>
+                  <pre data-prefix="10"><code>  halfWidthRect = halfWidth;</code></pre>
+                  <pre data-prefix="11"><code>  halfHeightRect = halfHeight;</code></pre>
+                  <pre data-prefix="12"><code>  totalCardType = totalCard;</code></pre>
+                  <pre data-prefix="13"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- SETTINGS -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Settings.pde</h2>
+              <!-- settingsPage() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">settingsPage()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void settingsPage() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code>  displayText("Settings", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
+                  <pre data-prefix="4"><code>  displayText("THEME:" + theme, 35, 5, textColor, primaryHoverColor, xCenter, 300);</code></pre>
+                  <pre data-prefix="5"><code>  displayText("BACK", 35, 5, textColor, secondaryHoverColor, xCenter, 350);</code></pre>
+                  <pre data-prefix="6"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- settingsPageMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">settingsPageMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void settingsPageMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  clickToRenderPage("SettingsPage", true, xCenter,</code></pre>
+                  <pre data-prefix="3"><code>    300, textWidth("Theme:" + theme) / 2, 15);</code></pre>
+                  <pre data-prefix="4"><code>  clickToRenderPage("MainMenu", false, xCenter,</code></pre>
+                  <pre data-prefix="5"><code>    360, textWidth("back") / 2, 15);</code></pre>
+                  <pre data-prefix="6"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- THEME -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Record_Page.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>String theme = "DARK";</code></pre>
+                  <pre data-prefix="2"><code></code></pre>
+                  <pre data-prefix="3"><code>int bgColor = #0d0401;</code></pre>
+                  <pre data-prefix="4"><code>int textColor = #f2f2f2;</code></pre>
+                  <pre data-prefix="5"><code>int primaryHoverColor = #87f49a;</code></pre>
+                  <pre data-prefix="6"><code>int secondaryHoverColor = #fcba03;</code></pre>
+                </div>
+              </div>
+              <!-- darkTheme(), lightTheme(), colorfullTheme() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">darkTheme(), lightTheme(), colorfullTheme()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void darkTheme() {</code></pre>
+                  <pre data-prefix="2"><code>  theme = "DARK";</code></pre>
+                  <pre data-prefix="3"><code>  bgColor = 30;</code></pre>
+                  <pre data-prefix="4"><code>  textColor = #f2f2f2;</code></pre>
+                  <pre data-prefix="5"><code>  primaryHoverColor = #87f49a;</code></pre>
+                  <pre data-prefix="6"><code>  secondaryHoverColor = #fcba03;</code></pre>
+                  <pre data-prefix="7"><code>}</code></pre>
+                  <pre data-prefix="8"><code></code></pre>
+                  <pre data-prefix="9"><code>void lightTheme() {</code></pre>
+                  <pre data-prefix="10"><code>  theme = "LIGHT";</code></pre>
+                  <pre data-prefix="11"><code>  bgColor = #d9d9d9;</code></pre>
+                  <pre data-prefix="12"><code>  textColor = #0d0401;</code></pre>
+                  <pre data-prefix="13"><code>  primaryHoverColor = #40c27a;</code></pre>
+                  <pre data-prefix="14"><code>  secondaryHoverColor = #fcba03;</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                  <pre data-prefix="16"><code></code></pre>
+                  <pre data-prefix="17"><code>void colorfullTheme() {</code></pre>
+                  <pre data-prefix="18"><code>  theme = "COLORFULL";</code></pre>
+                  <pre data-prefix="19"><code>  bgColor = #4195f0;</code></pre>
+                  <pre data-prefix="20"><code>  textColor = #542a91;</code></pre>
+                  <pre data-prefix="21"><code>  primaryHoverColor = #b2f007;</code></pre>
+                  <pre data-prefix="22"><code>  secondaryHoverColor = #e637c0;</code></pre>
+                  <pre data-prefix="23"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- renderTheme() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">renderTheme()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void renderTheme() {</code></pre>
+                  <pre data-prefix="2"><code>  switch(theme) {</code></pre>
+                  <pre data-prefix="3"><code>  case "DARK":</code></pre>
+                  <pre data-prefix="4"><code>    lightTheme();</code></pre>
+                  <pre data-prefix="5"><code>    break;</code></pre>
+                  <pre data-prefix="6"><code>  case "LIGHT":</code></pre>
+                  <pre data-prefix="7"><code>    colorfullTheme();</code></pre>
+                  <pre data-prefix="8"><code>    break;</code></pre>
+                  <pre data-prefix="9"><code>  case "COLORFULL":</code></pre>
+                  <pre data-prefix="10"><code>    darkTheme();</code></pre>
+                  <pre data-prefix="11"><code>    break;</code></pre>
+                  <pre data-prefix="12"><code>  default:</code></pre>
+                  <pre data-prefix="13"><code>    println("unknown color theme");</code></pre>
+                  <pre data-prefix="14"><code>  }</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- PLAY GAME -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Play_Game.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>boolean rotateHorizontal = true;</code></pre>
+                  <pre data-prefix="2"><code></code></pre>
+                  <pre data-prefix="3"><code>int win = 0;</code></pre>
+                  <pre data-prefix="4"><code>boolean sameCard;</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>int rotateInterval = 10;</code></pre>
+                  <pre data-prefix="7"><code></code></pre>
+                  <pre data-prefix="8"><code>boolean[][] rotateStatus;</code></pre>
+                  <pre data-prefix="9"><code>float[][] rectAngle;</code></pre>
+                  <pre data-prefix="10"><code></code></pre>
+                  <pre data-prefix="11"><code>int cardUp = -1;</code></pre>
+                  <pre data-prefix="12"><code>PImage[] checkCard = new PImage[2];</code></pre>
+                  <pre data-prefix="13"><code>int[] rowCard = new int[2];</code></pre>
+                  <pre data-prefix="14"><code>int[] columnCard = new int[2];</code></pre>
+                  <pre data-prefix="15"><code></code></pre>
+                  <pre data-prefix="16"><code>boolean[][] isAbleToRotate;</code></pre>
+                  <pre data-prefix="17"><code>boolean[][] cardFaceUp;</code></pre>
+                  <pre data-prefix="18"><code></code></pre>
+                  <pre data-prefix="19"><code>int[][] zPos;</code></pre>
+                </div>
+              </div>
+              <!-- playGame() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">playGame()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void playGame() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  waitToStartTheGame();</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>  displayText("Match the card", 25, 0, textColor, textColor, xCenter, 75);</code></pre>
+                  <pre data-prefix="7"><code>  cursor(ARROW);</code></pre>
+                  <pre data-prefix="8"><code></code></pre>
+                  <pre data-prefix="9"><code>  displayText("MENU", 25, 5, textColor, secondaryHoverColor, 75, 75);</code></pre>
+                  <pre data-prefix="10"><code></code></pre>
+                  <pre data-prefix="11"><code>  rectMode(CENTER);</code></pre>
+                  <pre data-prefix="12"><code>  setRect();</code></pre>
+                  <pre data-prefix="13"><code></code></pre>
+                  <pre data-prefix="14"><code>  waitToRotate();</code></pre>
+                  <pre data-prefix="15"><code>  waitAfterWin();</code></pre>
+                  <pre data-prefix="16"><code>  getTime();</code></pre>
+                  <pre data-prefix="17"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- shuffleCard() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">shuffleCard()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void shuffleCard(PImage[][] array) {</code></pre>
+                  <pre data-prefix="2"><code>  int Cols = array.length;</code></pre>
+                  <pre data-prefix="3"><code>  int Rows = array[0].length;</code></pre>
+                  <pre data-prefix="4"><code>  for (int col = 0; col <code Cols; col++) {</code></pre>
+                  <pre data-prefix="5"><code>    for (int row = 0; row <code Rows; row++) {</code></pre>
+                  <pre data-prefix="6"><code>      int randC = int(random(Cols));</code></pre>
+                  <pre data-prefix="7"><code>      int randR = int(random(Rows));</code></pre>
+                  <pre data-prefix="8"><code>      PImage imgTemp = array[col][row];</code></pre>
+                  <pre data-prefix="9"><code>      array[col][row] = array[randC][randR];</code></pre>
+                  <pre data-prefix="10"><code>      array[randC][randR] = imgTemp;</code></pre>
+                  <pre data-prefix="11"><code>    }</code></pre>
+                  <pre data-prefix="12"><code>  }</code></pre>
+                  <pre data-prefix="13"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setRect() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setRect()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setRect() {</code></pre>
+                  <pre data-prefix="2"><code>  int k = 0, l = 0;</code></pre>
+                  <pre data-prefix="3"><code>  for (float i = yPosStart; i <= yLimit; i = i + yRange) {</code></pre>
+                  <pre data-prefix="4"><code>    l = 0;</code></pre>
+                  <pre data-prefix="5"><code>    for (float j = xPosStart; j <= xLimit; j = j + xRange) {</code></pre>
+                  <pre data-prefix="6"><code>      pushMatrix();</code></pre>
+                  <pre data-prefix="7"><code></code></pre>
+                  <pre data-prefix="8"><code>      translate(j, i, zPos[k][l]);</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>      if (rotateHorizontal) {</code></pre>
+                  <pre data-prefix="11"><code>        rotateY(radians(rectAngle[k][l]));</code></pre>
+                  <pre data-prefix="12"><code>      } else {</code></pre>
+                  <pre data-prefix="13"><code>        rotateX(radians(rectAngle[k][l]));</code></pre>
+                  <pre data-prefix="14"><code>      }</code></pre>
+                  <pre data-prefix="15"><code>      rotateHorizontal = !rotateHorizontal;</code></pre>
+                  <pre data-prefix="16"><code></code></pre>
+                  <pre data-prefix="17"><code>      image(cardIdentity[k][l], 0, 0, 80, 80);</code></pre>
+                  <pre data-prefix="18"><code></code></pre>
+                  <pre data-prefix="19"><code>      translate(0, 0, -zPos[k][l]);</code></pre>
+                  <pre data-prefix="20"><code>      displayRect(0, 0, halfWidthRect * 2, halfHeightRect * 2, textColor, #ffffff);</code></pre>
+                  <pre data-prefix="21"><code></code></pre>
+                  <pre data-prefix="22"><code>      popMatrix();</code></pre>
+                  <pre data-prefix="23"><code></code></pre>
+                  <pre data-prefix="24"><code>      rotateRect(k, l);</code></pre>
+                  <pre data-prefix="25"><code>      l++;</code></pre>
+                  <pre data-prefix="26"><code>    }</code></pre>
+                  <pre data-prefix="27"><code>    k++;</code></pre>
+                  <pre data-prefix="28"><code>  }</code></pre>
+                  <pre data-prefix="29"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- rotateRect() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">rotateRect()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void rotateRect(int rowIndex, int columnIndex) {</code></pre>
+                  <pre data-prefix="2"><code>  if (rotateStatus[rowIndex][columnIndex]) {</code></pre>
+                  <pre data-prefix="3"><code>    rectAngle[rowIndex][columnIndex] += rotateInterval;</code></pre>
+                  <pre data-prefix="4"><code>    if (rectAngle[rowIndex][columnIndex] == 180 || rectAngle[rowIndex][columnIndex] == 0) {</code></pre>
+                  <pre data-prefix="5"><code>      rotateStatus[rowIndex][columnIndex] = false;</code></pre>
+                  <pre data-prefix="6"><code>    }</code></pre>
+                  <pre data-prefix="7"><code>    if (rectAngle[rowIndex][columnIndex] == 180 && !isAbleToRotate[rowIndex][columnIndex]) {</code></pre>
+                  <pre data-prefix="8"><code>      isAbleToRotate[rowIndex][columnIndex] = true;</code></pre>
+                  <pre data-prefix="9"><code>      cardUp = -1;</code></pre>
+                  <pre data-prefix="10"><code>    }</code></pre>
+                  <pre data-prefix="11"><code>  }</code></pre>
+                  <pre data-prefix="12"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- playGameMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">playGameMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void playGameMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  clickToRenderPage("MainMenu", false, 75,</code></pre>
+                  <pre data-prefix="3"><code>    75, textWidth("menu") / 2, 15);</code></pre>
+                  <pre data-prefix="4"><code></code></pre>
+                  <pre data-prefix="5"><code>  int k = 0, l = 0;</code></pre>
+                  <pre data-prefix="6"><code>  for (float i = yPosStart; i <= yLimit; i = i + yRange) {</code></pre>
+                  <pre data-prefix="7"><code>    l = 0;</code></pre>
+                  <pre data-prefix="8"><code>    for (float j = xPosStart; j <= xLimit; j = j + xRange) {</code></pre>
+                  <pre data-prefix="9"><code>      clickToRotateRect(k, l, j, i, halfWidthRect, halfHeightRect);</code></pre>
+                  <pre data-prefix="10"><code>      l++;</code></pre>
+                  <pre data-prefix="11"><code>    }</code></pre>
+                  <pre data-prefix="12"><code>    k++;</code></pre>
+                  <pre data-prefix="13"><code>  }</code></pre>
+                  <pre data-prefix="14"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- resetCard() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">resetCard()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void resetCard() {</code></pre>
+                  <pre data-prefix="2"><code>  for ( int i = 0; i < 2; i++) {</code></pre>
+                  <pre data-prefix="3"><code>    for (int j = 0; j < totalCardType; j++) {</code></pre>
+                  <pre data-prefix="4"><code>      rotateStatus[i][j] = false;</code></pre>
+                  <pre data-prefix="5"><code>      cardFaceUp[i][j] = false;</code></pre>
+                  <pre data-prefix="6"><code>      isAbleToRotate[i][j] = true;</code></pre>
+                  <pre data-prefix="7"><code>    }</code></pre>
+                  <pre data-prefix="8"><code>  }</code></pre>
+                  <pre data-prefix="9"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setAllCardStatus() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setAllCardStatus()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setAllCardStatus() {</code></pre>
+                  <pre data-prefix="2"><code>  rotateStatus = new boolean[2][totalCardType];</code></pre>
+                  <pre data-prefix="3"><code>  rectAngle = new float[2][totalCardType];</code></pre>
+                  <pre data-prefix="4"><code>  isAbleToRotate = new boolean[2][totalCardType];</code></pre>
+                  <pre data-prefix="5"><code>  cardFaceUp = new boolean[2][totalCardType];</code></pre>
+                  <pre data-prefix="6"><code>  zPos = new int[2][totalCardType];</code></pre>
+                  <pre data-prefix="7"><code></code></pre>
+                  <pre data-prefix="8"><code>  for (int i = 0; i < 2; i++) {</code></pre>
+                  <pre data-prefix="9"><code>    for (int j = 0; j < totalCardType; j++) {</code></pre>
+                  <pre data-prefix="10"><code>      rotateStatus[i][j] = false;</code></pre>
+                  <pre data-prefix="11"><code>      rectAngle[i][j] = 0;</code></pre>
+                  <pre data-prefix="12"><code>      zPos[i][j] = 1;</code></pre>
+                  <pre data-prefix="13"><code>      isAbleToRotate[i][j] = false;</code></pre>
+                  <pre data-prefix="14"><code>      cardFaceUp[i][j] = true;</code></pre>
+                  <pre data-prefix="15"><code>    }</code></pre>
+                  <pre data-prefix="16"><code>  }</code></pre>
+                  <pre data-prefix="17"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setCard() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setCard()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setCard() {</code></pre>
+                  <pre data-prefix="2"><code>  for (int i = 0; i < 2; i++) {</code></pre>
+                  <pre data-prefix="3"><code>    for (int j = 0; j < totalCardType; j++) {</code></pre>
+                  <pre data-prefix="4"><code>      //bgCard[i][j] = #f2f2f2;</code></pre>
+                  <pre data-prefix="5"><code>      rotateStatus[i][j] = true;</code></pre>
+                  <pre data-prefix="6"><code>      isAbleToRotate[i][j] = true;</code></pre>
+                  <pre data-prefix="7"><code>      cardFaceUp[i][j] = false;</code></pre>
+                  <pre data-prefix="8"><code>    }</code></pre>
+                  <pre data-prefix="9"><code>  }</code></pre>
+                  <pre data-prefix="10"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- changeRotateDirection() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">changeRotateDirection()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void changeRotateDirection(int rowIndex, int columnIndex) {</code></pre>
+                  <pre data-prefix="2"><code>  if (rectAngle[rowIndex][columnIndex] == 0) {</code></pre>
+                  <pre data-prefix="3"><code>    rotateInterval = 10;</code></pre>
+                  <pre data-prefix="4"><code>  } else {</code></pre>
+                  <pre data-prefix="5"><code>    rotateInterval = -10;</code></pre>
+                  <pre data-prefix="6"><code>  }</code></pre>
+                  <pre data-prefix="7"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- clickToRotateRect() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">clickToRotateRect()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix=""><code>void clickToRotateRect(int rowIndex, int columnIndex, float xPos, float yPos,</code></pre>
+                  <pre data-prefix="1"><code>                       float objHalfWidth, float objHalfHeight) {</code></pre>
+                  <pre data-prefix="2"><code></code></pre>
+                  <pre data-prefix="3"><code>  if ((mouseX <= xPos + objHalfWidth && mouseX >= xPos -  objHalfWidth) &&</code></pre>
+                  <pre data-prefix="4"><code>     (mouseY <= yPos + objHalfHeight && mouseY >= yPos - objHalfHeight)) {</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>    if (!rotateStatus[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex] && cardUp != 1) {</code></pre>
+                  <pre data-prefix="7"><code>      changeRotateDirection(rowIndex, columnIndex);</code></pre>
+                  <pre data-prefix="8"><code>      rotateStatus[rowIndex][columnIndex] = true;</code></pre>
+                  <pre data-prefix="9"><code>      playFlipSound();</code></pre>
+                  <pre data-prefix="10"><code>    }</code></pre>
+                  <pre data-prefix="11"><code></code></pre>
+                  <pre data-prefix="12"><code>    if (!cardFaceUp[rowIndex][columnIndex] && isAbleToRotate[rowIndex][columnIndex] && cardUp != 1) {</code></pre>
+                  <pre data-prefix="13"><code>      isAbleToRotate[rowIndex][columnIndex] = false;</code></pre>
+                  <pre data-prefix="14"><code></code></pre>
+                  <pre data-prefix="15"><code>      cardFaceUp[rowIndex][columnIndex] = true;</code></pre>
+                  <pre data-prefix="16"><code>      cardUp++;</code></pre>
+                  <pre data-prefix="17"><code></code></pre>
+                  <pre data-prefix="18"><code>      checkCard[cardUp] = cardIdentity[rowIndex][columnIndex];</code></pre>
+                  <pre data-prefix="19"><code></code></pre>
+                  <pre data-prefix="20"><code>      rowCard[cardUp] = rowIndex;</code></pre>
+                  <pre data-prefix="21"><code>      columnCard[cardUp] = columnIndex;</code></pre>
+                  <pre data-prefix="22"><code></code></pre>
+                  <pre data-prefix="23"><code>      if (cardUp == 1) {</code></pre>
+                  <pre data-prefix="24"><code>        if (checkCard[0] == checkCard[1]) {</code></pre>
+                  <pre data-prefix="25"><code>          for (int i = 0; i < 2; i++) {</code></pre>
+                  <pre data-prefix="26"><code>            isAbleToRotate[rowCard[i]][columnCard[i]] = false;</code></pre>
+                  <pre data-prefix="27"><code>          }</code></pre>
+                  <pre data-prefix="28"><code>          cardUp = -1;</code></pre>
+                  <pre data-prefix="29"><code>          win++;</code></pre>
+                  <pre data-prefix="30"><code>          sameCard = true;</code></pre>
+                  <pre data-prefix="31"><code>        } else {</code></pre>
+                  <pre data-prefix="32"><code>          startTimeToRotate = millis();</code></pre>
+                  <pre data-prefix="33"><code>          sameCard = false;</code></pre>
+                  <pre data-prefix="34"><code>        }</code></pre>
+                  <pre data-prefix="35"><code>      }</code></pre>
+                  <pre data-prefix="36"><code>    }</code></pre>
+                  <pre data-prefix="37"><code></code></pre>
+                  <pre data-prefix="38"><code>    if (win == totalCardType) {</code></pre>
+                  <pre data-prefix="39"><code>      startTimeToRotate = millis();</code></pre>
+                  <pre data-prefix="40"><code>      setBestTime();</code></pre>
+                  <pre data-prefix="41"><code>      playWinSound();</code></pre>
+                  <pre data-prefix="42"><code>      if (modeBT.equals("NONE") ||</code></pre>
+                  <pre data-prefix="43"><code>        int(split(timeText, ':')[0]) < int(split(modeBT, ':')[0]) ||</code></pre>
+                  <pre data-prefix="44"><code>        int(split(timeText, ':')[1]) < int(split(modeBT, ':')[1])) {</code></pre>
+                  <pre data-prefix="45"><code></code></pre>
+                  <pre data-prefix="46"><code>        setSaveJSONBT();</code></pre>
+                  <pre data-prefix="47"><code></code></pre>
+                  <pre data-prefix="48"><code>        newRecord = true;</code></pre>
+                  <pre data-prefix="49"><code>      } else {</code></pre>
+                  <pre data-prefix="50"><code></code></pre>
+                  <pre data-prefix="51"><code>        newRecord = false;</code></pre>
+                  <pre data-prefix="52"><code>      }</code></pre>
+                  <pre data-prefix="53"><code>    }</code></pre>
+                  <pre data-prefix="54"><code>  }</code></pre>
+                  <pre data-prefix="55"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- WIN GAME -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Win_Game.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>boolean newRecord;</code></pre>
+                </div>
+              </div>
+              <!-- winGame() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">winGame()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void winGame() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code>  displayText("Congratulation", 50, 0, textColor, textColor, xCenter, 150);</code></pre>
+                  <pre data-prefix="4"><code>  displayText("On winning", 50, 0, textColor, textColor, xCenter, 200);</code></pre>
+                  <pre data-prefix="5"><code>  displayRecordTime();</code></pre>
+                  <pre data-prefix="6"><code></code></pre>
+                  <pre data-prefix="7"><code>  displayText("PLAY AGAIN", 35, 5, textColor, primaryHoverColor, xCenter, 330);</code></pre>
+                  <pre data-prefix="8"><code>  displayText("MENU", 35, 5, textColor, primaryHoverColor, xCenter, 380);</code></pre>
+                  <pre data-prefix="9"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- displayRecordTime() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">displayRecordTime()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void displayRecordTime() {</code></pre>
+                  <pre data-prefix="2"><code>  if (newRecord) {</code></pre>
+                  <pre data-prefix="3"><code>    displayText("NEW RECORD TIME - " + timeText, 25, 0, textColor, textColor, xCenter, 265);</code></pre>
+                  <pre data-prefix="4"><code>  } else {</code></pre>
+                  <pre data-prefix="5"><code>    displayText("TIME - " + timeText, 25, 0, textColor, textColor, xCenter, 265);</code></pre>
+                  <pre data-prefix="6"><code>    displayText("BEST TIME - " + modeBT, 25, 0, textColor, textColor, xCenter, 450);</code></pre>
+                  <pre data-prefix="7"><code>  }</code></pre>
+                  <pre data-prefix="8"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- winGameMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">winGameMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void winGameMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  setGameStart(330, gameModeName);</code></pre>
+                  <pre data-prefix="3"><code>  </code></pre>
+                  <pre data-prefix="4"><code>  clickToRenderPage("PlayGame", false, xCenter,</code></pre>
+                  <pre data-prefix="5"><code>    330, textWidth("PLAY AGAIN") / 2, 20);</code></pre>
+                  <pre data-prefix="6"><code></code></pre>
+                  <pre data-prefix="7"><code>  clickToRenderPage("MainMenu", false, xCenter,</code></pre>
+                  <pre data-prefix="8"><code>    380, textWidth("MENU") / 2, 20);</code></pre>
+                  <pre data-prefix="9"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- CONNECT JSON -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Connect_JSON.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>String modeBT;</code></pre>
+                </div>
+              </div>
+              <!-- setBestTime() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setBestTime()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setBestTime() {</code></pre>
+                  <pre data-prefix="2"><code>  switch(gameModeName) {</code></pre>
+                  <pre data-prefix="3"><code>  case "EASY":</code></pre>
+                  <pre data-prefix="4"><code>    modeBT = easyBT;</code></pre>
+                  <pre data-prefix="5"><code>    break;</code></pre>
+                  <pre data-prefix="6"><code>  case "NORMAL":</code></pre>
+                  <pre data-prefix="7"><code>    modeBT = normalBT;</code></pre>
+                  <pre data-prefix="8"><code>    break;</code></pre>
+                  <pre data-prefix="9"><code>  case "HARD":</code></pre>
+                  <pre data-prefix="10"><code>    modeBT = hardBT;</code></pre>
+                  <pre data-prefix="11"><code>    break;</code></pre>
+                  <pre data-prefix="12"><code>  default:</code></pre>
+                  <pre data-prefix="13"><code>    println("Unknown Game Mode");</code></pre>
+                  <pre data-prefix="14"><code>  }</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setSaveJSONBT() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setSaveJSONBT()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setSaveJSONBT() {</code></pre>
+                  <pre data-prefix="2"><code>  json = new JSONObject();</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  switch(gameModeName) {</code></pre>
+                  <pre data-prefix="5"><code>  case "EASY":</code></pre>
+                  <pre data-prefix="6"><code>    json.setString("easy", timeText);</code></pre>
+                  <pre data-prefix="7"><code>    json.setString("normal", normalBT);</code></pre>
+                  <pre data-prefix="8"><code>    json.setString("hard", hardBT);</code></pre>
+                  <pre data-prefix="9"><code>    break;</code></pre>
+                  <pre data-prefix="10"><code>  case "NORMAL":</code></pre>
+                  <pre data-prefix="11"><code>    json.setString("easy", easyBT);</code></pre>
+                  <pre data-prefix="12"><code>    json.setString("normal", timeText);</code></pre>
+                  <pre data-prefix="13"><code>    json.setString("hard", hardBT);</code></pre>
+                  <pre data-prefix="14"><code>    break;</code></pre>
+                  <pre data-prefix="15"><code>  case "HARD":</code></pre>
+                  <pre data-prefix="16"><code>    json.setString("easy", easyBT);</code></pre>
+                  <pre data-prefix="17"><code>    json.setString("normal", normalBT);</code></pre>
+                  <pre data-prefix="18"><code>    json.setString("hard", timeText);</code></pre>
+                  <pre data-prefix="19"><code>    break;</code></pre>
+                  <pre data-prefix="20"><code>  default:</code></pre>
+                  <pre data-prefix="21"><code>    println("Unknown Game Mode");</code></pre>
+                  <pre data-prefix="22"><code>  }</code></pre>
+                  <pre data-prefix="23"><code></code></pre>
+                  <pre data-prefix="24"><code>  saveJSONObject(json, "../data/record.json");</code></pre>
+                  <pre data-prefix="25"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- RECORD PAGE -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Record_Page.pde</h2>
+              <!-- recordPage() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">recordPage()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void recordPage() {</code></pre>
+                  <pre data-prefix="2"><code>  background(bgColor);</code></pre>
+                  <pre data-prefix="3"><code>  displayText("Best Record", 50, 0, textColor, textColor, xCenter, 230);</code></pre>
+                  <pre data-prefix="4"><code>  reloadBestTime();</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>  displayText("EASY - " + easyBT, 30, 0, textColor, textColor, xCenter, 300);</code></pre>
+                  <pre data-prefix="7"><code>  displayText("NORMAL - " + normalBT, 30, 0, textColor, textColor, xCenter, 350);</code></pre>
+                  <pre data-prefix="8"><code>  displayText("HARD - " + hardBT, 30, 0, textColor, textColor, xCenter, 400);</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>  displayText("MENU", 35, 5, textColor, secondaryHoverColor, xCenter, 460);</code></pre>
+                  <pre data-prefix="11"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- recordPageMouseClicked() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">recordPageMouseClicked()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void recordPageMouseClicked() {</code></pre>
+                  <pre data-prefix="2"><code>  clickToRenderPage("MainMenu", false, xCenter,</code></pre>
+                  <pre data-prefix="3"><code>    480, textWidth("menu") / 2, 20);</code></pre>
+                  <pre data-prefix="4"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- TIME SETTING -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Time_Setting.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>String easyBT, normalBT, hardBT;</code></pre>
+                  <pre data-prefix="2"><code></code></pre>
+                  <pre data-prefix="3"><code>int startTimeToRotate;</code></pre>
+                  <pre data-prefix="4"><code></code></pre>
+                  <pre data-prefix="5"><code>int minuteTime = 0;</code></pre>
+                  <pre data-prefix="6"><code>int secondTime = 0;</code></pre>
+                  <pre data-prefix="7"><code></code></pre>
+                  <pre data-prefix="8"><code>String timeText;</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>boolean gameStart;</code></pre>
+                </div>
+              </div>
+              <!-- reloadBestTime() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">reloadBestTime()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void reloadBestTime() {</code></pre>
+                  <pre data-prefix="2"><code>  json = loadJSONObject("../data/record.json");</code></pre>
+                  <pre data-prefix="3"><code>  easyBT = json.getString("easy");</code></pre>
+                  <pre data-prefix="4"><code>  normalBT = json.getString("normal");</code></pre>
+                  <pre data-prefix="5"><code>  hardBT = json.getString("hard");</code></pre>
+                  <pre data-prefix="6"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- setGameStart() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setGameStart()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setGameStart(float yPos, String gameMode) {</code></pre>
+                  <pre data-prefix="2"><code>  textSize(35);</code></pre>
+                  <pre data-prefix="3"><code>  float halfExitText = textWidth("Play") / 2;</code></pre>
+                  <pre data-prefix="4"><code>  if ((mouseX <= xCenter + halfExitText && mouseX >= xCenter -  halfExitText) &&</code></pre>
+                  <pre data-prefix="5"><code>      (mouseY <= yPos + 20 && mouseY >= yPos - 20)) {</code></pre>
+                  <pre data-prefix="6"><code>    startTime = millis();</code></pre>
+                  <pre data-prefix="7"><code>    minuteTime = 0;</code></pre>
+                  <pre data-prefix="8"><code>    secondTime = 0;</code></pre>
+                  <pre data-prefix="9"><code>    gameModeName = gameMode;</code></pre>
+                  <pre data-prefix="10"><code>    gameType();</code></pre>
+                  <pre data-prefix="11"><code>    loadAssets();</code></pre>
+                  <pre data-prefix="12"><code></code></pre>
+                  <pre data-prefix="13"><code>    shuffleCard(cardIdentity);</code></pre>
+                  <pre data-prefix="14"><code>    setAllCardStatus();</code></pre>
+                  <pre data-prefix="15"><code>    gameStart = true;</code></pre>
+                  <pre data-prefix="16"><code>    rotateInterval = 10;</code></pre>
+                  <pre data-prefix="17"><code>  }</code></pre>
+                  <pre data-prefix="18"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- gameType() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">gameType()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void gameType() {</code></pre>
+                  <pre data-prefix="2"><code>  switch(gameModeName) {</code></pre>
+                  <pre data-prefix="3"><code>  case "EASY":</code></pre>
+                  <pre data-prefix="4"><code>    setGameMode(4, 140, 300, 240, 290, 860, 590, 100, 125);</code></pre>
+                  <pre data-prefix="5"><code>    break;</code></pre>
+                  <pre data-prefix="6"><code>  case "NORMAL":</code></pre>
+                  <pre data-prefix="7"><code>    setGameMode(5, 108, 300, 196, 246, 892, 546, 88, 113);</code></pre>
+                  <pre data-prefix="8"><code>    break;</code></pre>
+                  <pre data-prefix="9"><code>  case "HARD":</code></pre>
+                  <pre data-prefix="10"><code>    setGameMode(6, 87.5, 300, 165, 215, 912.5, 515, 77.5, 102.5);</code></pre>
+                  <pre data-prefix="11"><code>    break;</code></pre>
+                  <pre data-prefix="12"><code>  default:</code></pre>
+                  <pre data-prefix="13"><code>    println("Unknown Game Mode");</code></pre>
+                  <pre data-prefix="14"><code>  }</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- timeTicking(), timeWaitToRotateTicking() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">timeTicking(), timeWaitToRotateTicking()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix=""><code>int timeTicking() {</code></pre>
+                  <pre data-prefix=""><code>  return endTime - startTime;</code></pre>
                   <pre data-prefix=""><code>}</code></pre>
+                  <pre data-prefix=""><code></code></pre>
+                  <pre data-prefix=""><code>int timeWaitToRotateTicking() {</code></pre>
+                  <pre data-prefix=""><code>  return endTime - startTimeToRotate;</code></pre>
+                  <pre data-prefix=""><code>}</code></pre>
+                </div>
+              </div>
+              <!-- getTime() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">getTime()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void getTime() {</code></pre>
+                  <pre data-prefix="2"><code>  int interval = 1000;</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  if (timeTicking() >= interval) {</code></pre>
+                  <pre data-prefix="5"><code>    secondTime++;</code></pre>
+                  <pre data-prefix="6"><code>    startTime = millis();</code></pre>
+                  <pre data-prefix="7"><code>  }</code></pre>
+                  <pre data-prefix="8"><code></code></pre>
+                  <pre data-prefix="9"><code>  if (secondTime >= 59) {</code></pre>
+                  <pre data-prefix="10"><code>    minuteTime++;</code></pre>
+                  <pre data-prefix="11"><code>    secondTime = 0;</code></pre>
+                  <pre data-prefix="12"><code>  }</code></pre>
+                  <pre data-prefix="13"><code></code></pre>
+                  <pre data-prefix="14"><code>  timeText = minuteTime + ":" + secondTime;</code></pre>
+                  <pre data-prefix="15"><code>  displayText(timeText, 25, 0, textColor, textColor, 915, 75);</code></pre>
+                  <pre data-prefix="16"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- waitToStartTheGame(), waitToRotate(), waitAfterWin() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">waitToStartTheGame(), waitToRotate(), waitAfterWin()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void waitToStartTheGame() {</code></pre>
+                  <pre data-prefix="2"><code>  int interval = 3;</code></pre>
+                  <pre data-prefix="3"><code>  if (secondTime >= interval && gameStart) {</code></pre>
+                  <pre data-prefix="4"><code>    setCard();</code></pre>
+                  <pre data-prefix="5"><code>    gameStart = false;</code></pre>
+                  <pre data-prefix="6"><code>  }</code></pre>
+                  <pre data-prefix="7"><code>}</code></pre>
+                  <pre data-prefix="8"><code></code></pre>
+                  <pre data-prefix="9"><code>void waitToRotate() {</code></pre>
+                  <pre data-prefix="10"><code>  int interval = 700;</code></pre>
+                  <pre data-prefix="11"><code>  if (timeWaitToRotateTicking() >= interval && cardUp == 1 && !sameCard) {</code></pre>
+                  <pre data-prefix="12"><code>    for (int i = 0; i < 2; i++) {</code></pre>
+                  <pre data-prefix="13"><code>      changeRotateDirection(rowCard[i], columnCard[i]);</code></pre>
+                  <pre data-prefix="14"><code></code></pre>
+                  <pre data-prefix="15"><code>      rotateStatus[rowCard[i]][columnCard[i]] = true;</code></pre>
+                  <pre data-prefix="16"><code>      cardFaceUp[rowCard[i]][columnCard[i]] = false;</code></pre>
+                  <pre data-prefix="17"><code>    }</code></pre>
+                  <pre data-prefix="18"><code></code></pre>
+                  <pre data-prefix="19"><code>    sameCard = true;</code></pre>
+                  <pre data-prefix="20"><code>  }</code></pre>
+                  <pre data-prefix="21"><code>}</code></pre>
+                  <pre data-prefix="22"><code></code></pre>
+                  <pre data-prefix="23"><code>void waitAfterWin() {</code></pre>
+                  <pre data-prefix="24"><code>  int interval = 500;</code></pre>
+                  <pre data-prefix="25"><code>  if (win == totalCardType && timeWaitToRotateTicking() >= interval) {</code></pre>
+                  <pre data-prefix="26"><code>    resetCard();</code></pre>
+                  <pre data-prefix="27"><code></code></pre>
+                  <pre data-prefix="28"><code>    page = "WinPage";</code></pre>
+                  <pre data-prefix="29"><code>    win = 0;</code></pre>
+                  <pre data-prefix="30"><code>  }</code></pre>
+                  <pre data-prefix="31"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- DISPLAY RECT -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">display_rect.pde</h2>
+              <!-- displayRect() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">displayRect()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void displayRect(float xPos, float yPos, float widthSize, float heightSize,</code></pre>
+                  <pre data-prefix="2"><code>                int colorFill, int colorStroke) {</code></pre>
+                  <pre data-prefix="3"><code>  noFill();</code></pre>
+                  <pre data-prefix="4"><code>  noStroke();</code></pre>
+                  <pre data-prefix="5"><code></code></pre>
+                  <pre data-prefix="6"><code>  if (colorFill != -1) {</code></pre>
+                  <pre data-prefix="7"><code>    fill(colorFill);</code></pre>
+                  <pre data-prefix="8"><code>  }</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>  if (colorStroke != -1) {</code></pre>
+                  <pre data-prefix="11"><code>    stroke(colorStroke);</code></pre>
+                  <pre data-prefix="12"><code>  }</code></pre>
+                  <pre data-prefix="13"><code></code></pre>
+                  <pre data-prefix="14"><code>  rect(xPos, yPos, widthSize, heightSize);</code></pre>
+                  <pre data-prefix="15"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- DISPLAY TEXT -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">display_text.pde</h2>
+              <!-- displayText() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">displayText()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void displayText(String text, int textSize, int scaleSize, int regularColor,</code></pre>
+                  <pre data-prefix="2"><code>                int colorOnHover, float xPos, float yPos) {</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>  textAlign(CENTER, CENTER);</code></pre>
+                  <pre data-prefix="5"><code>  textSize(textSize);</code></pre>
+                  <pre data-prefix="6"><code></code></pre>
+                  <pre data-prefix="7"><code>  float halfTextWidth = textWidth(text) / 2;</code></pre>
+                  <pre data-prefix="8"><code>  float halfTextHeight = textSize / 2;</code></pre>
+                  <pre data-prefix="9"><code></code></pre>
+                  <pre data-prefix="10"><code>  fill(regularColor);</code></pre>
+                  <pre data-prefix="11"><code>  if ((mouseX <= xPos + halfTextWidth &&</code></pre>
+                  <pre data-prefix="12"><code>    mouseX >= xPos -  halfTextWidth) &&</code></pre>
+                  <pre data-prefix="13"><code>    (mouseY <= yPos + halfTextHeight && mouseY >= yPos - halfTextHeight)) {</code></pre>
+                  <pre data-prefix="14"><code>    textSize(textSize + scaleSize);</code></pre>
+                  <pre data-prefix="15"><code>    if (scaleSize != 0) {</code></pre>
+                  <pre data-prefix="16"><code>      cursor(HAND);</code></pre>
+                  <pre data-prefix="17"><code>    }</code></pre>
+                  <pre data-prefix="18"><code>    fill(colorOnHover);</code></pre>
+                  <pre data-prefix="19"><code>  }</code></pre>
+                  <pre data-prefix="20"><code></code></pre>
+                  <pre data-prefix="21"><code>  text(text, xPos, yPos);</code></pre>
+                  <pre data-prefix="22"><code>}</code></pre>
+                </div>
+              </div>
+            </div>
+            <!-- PLAY SOUND -->
+            <div class="mt-12">
+              <h2 class="text-2xl font-semibold">Play_Sound.pde</h2>
+              <!-- Global Variable -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">Global Variable</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>import processing.sound.*;</code></pre>
+                  <pre data-prefix="2"><code>SoundFile tick, winSound, flip, themeSound;</code></pre>
+                </div>
+              </div>
+              <!-- setupAllSound() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">setupAllSound()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void setupAllSound() {</code></pre>
+                  <pre data-prefix="2"><code>  tick = new SoundFile(this, "../sound/tick.mp3");</code></pre>
+                  <pre data-prefix="3"><code>  winSound = new SoundFile(this, "../sound/win.mp3");</code></pre>
+                  <pre data-prefix="4"><code>  flip = new SoundFile(this, "../sound/flip.mp3");</code></pre>
+                  <pre data-prefix="5"><code>  themeSound = new SoundFile(this, "../sound/themeSound.mp3");</code></pre>
+                  <pre data-prefix="6"><code>}</code></pre>
+                </div>
+              </div>
+              <!-- playFlipSound(), playTickSound(), playWinSound() -->
+              <div class="mt-10">
+                <h3 class="text-xl font-medium mt-3">playFlipSound(), playTickSound(), playWinSound()</h3>
+                <p class="text-lg">The setup we make using processing :</p>
+                <div class="mockup-code mt-3">
+                  <pre data-prefix="1"><code>void playFlipSound() {</code></pre>
+                  <pre data-prefix="2"><code>  flip.play();</code></pre>
+                  <pre data-prefix="3"><code>}</code></pre>
+                  <pre data-prefix="4"><code></code></pre>
+                  <pre data-prefix="5"><code>void playTickSound() {</code></pre>
+                  <pre data-prefix="6"><code>  tick.play();</code></pre>
+                  <pre data-prefix="7"><code>}</code></pre>
+                  <pre data-prefix="8"><code></code></pre>
+                  <pre data-prefix="9"><code>void playWinSound() {</code></pre>
+                  <pre data-prefix="10"><code>  winSound.play();</code></pre>
+                  <pre data-prefix="11"><code>}</code></pre>
                 </div>
               </div>
             </div>
